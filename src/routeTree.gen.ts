@@ -10,11 +10,23 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as KinstControlRouteImport } from './routes/kinst-control'
+import { Route as ApiPublicLibraryRouteImport } from './routes/api/public/library'
 import { Route as ApiPublicPSplatRouteImport } from './routes/api/public/p.$'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KinstControlRoute = KinstControlRouteImport.update({
+  id: '/kinst-control',
+  path: '/kinst-control',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiPublicLibraryRoute = ApiPublicLibraryRouteImport.update({
+  id: '/api/public/library',
+  path: '/api/public/library',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ApiPublicPSplatRoute = ApiPublicPSplatRouteImport.update({
@@ -25,27 +37,40 @@ const ApiPublicPSplatRoute = ApiPublicPSplatRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/kinst-control': typeof KinstControlRoute
+  '/api/public/library': typeof ApiPublicLibraryRoute
   '/api/public/p/$': typeof ApiPublicPSplatRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/kinst-control': typeof KinstControlRoute
+  '/api/public/library': typeof ApiPublicLibraryRoute
   '/api/public/p/$': typeof ApiPublicPSplatRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/kinst-control': typeof KinstControlRoute
+  '/api/public/library': typeof ApiPublicLibraryRoute
   '/api/public/p/$': typeof ApiPublicPSplatRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api/public/p/$'
+  fullPaths: '/' | '/kinst-control' | '/api/public/library' | '/api/public/p/$'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api/public/p/$'
-  id: '__root__' | '/' | '/api/public/p/$'
+  to: '/' | '/kinst-control' | '/api/public/library' | '/api/public/p/$'
+  id:
+    | '__root__'
+    | '/'
+    | '/kinst-control'
+    | '/api/public/library'
+    | '/api/public/p/$'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  KinstControlRoute: typeof KinstControlRoute
+  ApiPublicLibraryRoute: typeof ApiPublicLibraryRoute
   ApiPublicPSplatRoute: typeof ApiPublicPSplatRoute
 }
 
@@ -56,6 +81,20 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kinst-control': {
+      id: '/kinst-control'
+      path: '/kinst-control'
+      fullPath: '/kinst-control'
+      preLoaderRoute: typeof KinstControlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/public/library': {
+      id: '/api/public/library'
+      path: '/api/public/library'
+      fullPath: '/api/public/library'
+      preLoaderRoute: typeof ApiPublicLibraryRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/p/$': {
@@ -70,6 +109,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  KinstControlRoute: KinstControlRoute,
+  ApiPublicLibraryRoute: ApiPublicLibraryRoute,
   ApiPublicPSplatRoute: ApiPublicPSplatRoute,
 }
 export const routeTree = rootRouteImport

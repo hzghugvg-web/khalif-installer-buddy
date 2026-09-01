@@ -67,9 +67,11 @@ export const saveAdminApp = createServerFn({ method: "POST" })
   .handler(async ({ data }) => {
     await requireAdmin();
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const { id, ...app } = data;
+    const row = id ? { ...app, id } : app;
     const { data: saved, error } = await supabaseAdmin
       .from("library_apps")
-      .upsert(data)
+      .upsert(row)
       .select("*")
       .single();
     if (error) throw error;
