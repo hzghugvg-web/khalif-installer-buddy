@@ -41,7 +41,7 @@
 <meta content="KINST iOS IPA Installer" name="twitter:image:alt">
 <meta name="robots" content="index, follow">
 <link href="//repo.ethsign.fyi" rel="dns-prefetch">
-<link href="//t.me" rel="dns-prefetch">
+
 <link crossorigin="" href="//applejr.cloud" rel="preconnect">
 <link href="//repository.apptesters.org" rel="dns-prefetch">
 <link href="//community-apps.sidestore.io" rel="dns-prefetch">
@@ -103,7 +103,10 @@
   #kinstHelp p, #kinstHelp li{font-size:14px;line-height:1.55;opacity:.85;}
   #kinstHelp ol, #kinstHelp ul{padding-left:20px;margin:6px 0;}
   #kinstHelp .close{position:sticky;top:0;float:right;background:rgba(255,255,255,.08);border:0;color:#fff;width:34px;height:34px;border-radius:50%;font-size:20px;line-height:34px;}
-</style>
+   .hero-slider{display:flex!important;flex-direction:column!important;gap:14px;overflow:visible!important;transform:none!important;scroll-snap-type:none!important;}
+   .hero-slider > .featured-card{width:100%!important;min-width:0!important;flex:0 0 auto!important;}
+   .hero-dots{display:none!important;}
+ </style>
 </head>
 <body>
 <main id="main-content">
@@ -111,13 +114,6 @@
 <div class="brи">
 <h1 id="pageTitle">KINST<small>KHALIFINSTALLER</small></h1>
 <p>iOS Приложения • Установщик IPA • Подпись</p>
-</div>
-<div class="header-actions">
-<button aria-label="Обновить KINST" class="icon-btn" id="refreshButton" type="button">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 10h-2.1A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35Z"></path>
-</svg>
-</button>
 </div>
 </header>
 <div class="page active" id="page-library">
@@ -139,10 +135,10 @@
 </article>
 <article class="featured-card hero-card hero-purple" data-feature="library">
 <div class="hero-content">
-<span class="hero-badge">APPLEJR</span>
-<h3 class="hero-title">IPA <span>Библиотека</span></h3>
-<p>iOS-тулзы, эмуляторы и утилиты в одном месте.</p>
-<button class="hero-button" type="button">Смотреть приложения <span>→</span></button>
+<span class="hero-badge">ЧИТ</span>
+<h3 class="hero-title">Хочешь чит на <span>PUBG Mobile</span>?</h3>
+<p>Начни устанавливать — жми кнопку и следуй инструкции.</p>
+<button class="hero-button" type="button">Начать установку <span>→</span></button>
 </div>
 <div class="hero-art">
 <img alt="SideStore iOS installer" class="hero-single" decoding="async" height="1024" loading="lazy" src="assets/img-local/sides.webp" width="1024">
@@ -171,69 +167,7 @@
 </div>
 </article>
 </div>
-<div aria-label="Featured slides" class="hero-dots" id="heroDots">
-<button aria-label="Featured slide 1" class="hero-dot active" type="button"></button>
-<button aria-label="Featured slide 2" class="hero-dot" type="button"></button>
-<button aria-label="Featured slide 3" class="hero-dot" type="button"></button>
-<button aria-label="Featured slide 4" class="hero-dot" type="button"></button>
-</div>
 </section>
-<div class="featured-simple featured-pro">
-<div class="featured-header">
-    ⭐ Рекомендуем
-    <span class="featured-chip">ПОДБОРКА</span>
-</div>
-<div class="featured-grid">
-<div class="featured-item pro" data-badge="HOT">
-<img alt="Minecraft for iOS" decoding="async" height="320" loading="lazy" src="assets/img-local/RHKLBQ7m-d8ea292b.webp" width="320">
-<div class="f-info">
-<div class="f-title">Minecraft</div>
-<div class="f-desc">Java Edition iOS</div>
-</div>
-<a class="badge" href="https://youtu.be/NlJRqqMwZ5w?si=qsT3lL61bMILIYHf">Установить</a>
-</div>
-<div class="featured-item pro" data-badge="v2.735">
-<img alt="Delta Executor" decoding="async" height="600" loading="lazy" src="assets/img-local/delta.webp" width="600">
-<div class="f-info">
-<div class="f-title">Delta Executor</div>
-<div class="f-desc">iOS Direct Install Method</div>
-</div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/royilkom-alt/downloads/raw/refs/heads/main/delta-executor-ios-directinstall.plist">Установить</a>
-</div>
-<div class="featured-item pro" data-badge="VIRAL">
-<img alt="PlayStation 3 emulator for iOS" decoding="async" height="320" loading="lazy" src="assets/img-local/ps3.webp" width="319">
-<div class="f-info">
-<div class="f-title">PlayStation 3 iOS</div>
-<div class="f-desc">Install PS3 Games</div>
-</div>
-<a class="badge" href="https://youtu.be/iMyuoEfYx7o?si=2ggWqyhua4CA4s5v">Установить</a>
-</div>
-<div class="featured-item">
-<img alt="Auto Clicker for iOS" decoding="async" height="320" loading="lazy" src="assets/img-local/iwcjE2xm-8ccbc446.webp" width="320">
-<div class="f-info">
-<div class="f-title">Auto Clicker</div>
-<div class="f-desc">Auto Clicker iOS</div>
-</div>
-<a class="badge" href="https://youtu.be/tsJj330FU4E?si=rA22HPFgvZYpFd4Y">Установить</a>
-</div>
-<div class="featured-item">
-<img alt="Apple Music for iOS" decoding="async" height="320" loading="lazy" src="assets/img-local/JTCH5h0m-1c5a02db.webp" width="320">
-<div class="f-info">
-<div class="f-title">Apple Music</div>
-<div class="f-desc">Get Free Apple Music</div>
-</div>
-<a class="badge" href="https://youtu.be/9jw1Q2fU2ho?si=UOPL3av5KK9BnPgE">Установить</a>
-</div>
-</div>
-</div>
-<div class="library-ad" style="margin:14px 0 12px;">
-<center>
-<script async="async" data-cfasync="false" src="https://decreasestreet.com/8288883d4d7585f5df13bda124f37b0d/invoke.js"></script>
-<div id="container-8288883d4d7585f5df13bda124f37b0d"></div>
-
-
-</center>
-</div>
 <div aria-label="Installer categories" class="sub-tabs">
 <div class="sub-tab active" data-cat="esign">ESign</div>
 <div class="sub-tab" data-cat="scarlet">Scarlet</div>
@@ -1319,24 +1253,6 @@
 <a aria-label="Disclaimer" href="disclaimer/index.htm">
 <span>Дисклеймер</span>
 </a>
-<a aria-label="YouTube" href="https://www.youtube.com/@applejr3645" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M22.5 7.1A3 3 0 0 0 20.4 5C18.5 4.5 15.2 4.3 12 4.3S5.5 4.5 3.6 5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 1 12a31 31 0 0 0 .5 4.9A3 3 0 0 0 3.6 19c1.9.5 5.2.7 8.4.7s6.5-.2 8.4-.7a3 3 0 0 0 2.1-2.1A31 31 0 0 0 23 12a31 31 0 0 0-.5-4.9ZM9.8 15.5v-7l6 3.5-6 3.5Z"></path>
-</svg>
-<span>YouTube</span>
-</a>
-<a aria-label="Discord" href="https://discord.gg/C2hvZjP4r" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M19.7 5.3a18 18 0 0 0-4.5-1.4l-.6 1.2a16.7 16.7 0 0 0-5.2 0l-.6-1.2a18 18 0 0 0-4.5 1.4C1.5 9.5.7 13.6 1.1 17.6a18.4 18.4 0 0 0 5.5 2.8l1.3-1.8a11.5 11.5 0 0 1-2.1-1l.5-.4a12.8 12.8 0 0 0 11.4 0l.5.4a11.5 11.5 0 0 1-2.1 1l1.3 1.8a18.4 18.4 0 0 0 5.5-2.8c.5-4.6-.8-8.7-3.2-12.3ZM8.5 15.2c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Zm7 0c-1.1 0-2-1-2-2.2s.9-2.2 2-2.2 2 1 2 2.2-.9 2.2-2 2.2Z"></path>
-</svg>
-<span>Discord</span>
-</a>
-<a aria-label="Telegram" href="https://t.me/iSolutional" rel="noopener noreferrer" target="_blank">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M21.7 3.3 2.8 10.6c-1.3.5-1.3 1.3-.2 1.7l4.8 1.5 1.8 5.5c.2.7.1 1 .9 1 .6 0 .9-.3 1.2-.6l2.4-2.3 5 3.7c.9.5 1.6.3 1.8-.9l3.2-15.2c.4-1.5-.5-2.2-2-1.7ZM9.3 13.5l9.4-5.9c.5-.3.9-.1.6.2l-7.8 7-.3 3.1-1.9-4.4Z"></path>
-</svg>
-<span>Telegram</span>
-</a>
 </nav>
 <p>© 2026 KINST</p>
 </footer>
@@ -1367,44 +1283,10 @@
 </svg>
 <span>Подпись</span>
 </div>
-<div class="nav-link" data-target="page-source">
-<svg viewbox="0 0 24 24">
-<path d="M22.7 19.3l-4.4-4.4c.3-.7.5-1.4.5-2.2
-             0-3.3-2.7-6-6-6s-6 2.7-6 6
-             2.7 6 6 6c.8 0 1.5-.2 2.2-.5
-             l4.4 4.4 1.3-1.3z
-             M12 16c-2.2 0-4-1.8-4-4
-             s1.8-4 4-4 4 1.8 4 4
-             -1.8 4-4 4z"></path>
-</svg>
-<span>Джейлбрейк</span>
-</div>
-
-<a aria-label="Open KINST Sideloading" class="nav-link nav-sideload-link" href="https://sideload.applejr.net/">
-<svg aria-hidden="true" viewbox="0 0 24 24">
-<path d="M8 2h8a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3zm0 2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H8z"></path>
-<path d="M11 6h2v6h3l-4 4-4-4h3V6z"></path>
-</svg>
-<span>Сайдлоадинг</span>
-</a>
 
 </div>
 <script defer="" src="assets/js/script.min.js?v=1787497947"></script>
 
-<script data-cfasync="false" src="https://gpcasla.org/1/4dc61b5aa51bcc2669f4fd18af8266d3"></script>
-
-
-   
-<script type="text/javascript">var _Hasync= _Hasync|| [];
-_Hasync.push(['Histats.start', '1,4981436,4,0,0,0,00010000']);
-_Hasync.push(['Histats.fasi', '1']);
-_Hasync.push(['Histats.track_hits', '']);
-(function() {
-var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
-hs.src = ('//s10.histats.com/js15_as.js');
-(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
-})();</script>
-<noscript><a href="index.htm" target="_blank"><img src="0.gif?4981436&101" alt="" border="0"></a></noscript>
 
 </body>
 </html>
