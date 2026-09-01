@@ -14,7 +14,48 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      library_apps: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          icon_url: string
+          id: string
+          install_url: string
+          is_published: boolean
+          name: string
+          sort_order: number
+          updated_at: string
+          version: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string
+          icon_url?: string
+          id?: string
+          install_url: string
+          is_published?: boolean
+          name: string
+          sort_order?: number
+          updated_at?: string
+          version?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          icon_url?: string
+          id?: string
+          install_url?: string
+          is_published?: boolean
+          name?: string
+          sort_order?: number
+          updated_at?: string
+          version?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
