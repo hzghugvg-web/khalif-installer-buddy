@@ -405,12 +405,12 @@ h1{ font-size:21px; margin:12px 0 8px; }
 </div>
 
 
-      <div class="badge"><span class="dot-green"></span>Signed Certificate</div>
+      <div class="badge"><span class="dot-green"></span>Подписанный сертификат</div>
       </div>
 
-      <h1>Subscribe to Unlock</h1>
+      <h1>Ссылка на установку</h1>
 <p>
-Esign/Scarlet/Ksign Direct Install with newest certificate from KINST.
+Esign/Scarlet/Ksign Прямая Установить with newest certificate from KINST.
     </p>
 
       <!-- Button 1: Subscribe Task -->
@@ -421,11 +421,11 @@ Esign/Scarlet/Ksign Direct Install with newest certificate from KINST.
             <path fill="#050814" d="M9.75 14.43V7.86l6.02 3.29-6.02 3.28z"/>
           </svg>
         </span>
-        <span>Subscribe (Task 1/1)</span>
+        <span>Продолжить</span>
       </button>
 
       <!-- Button 2: Get Link -->
-      <button class="btn btn-lock" id="btnGet" disabled style="margin-top:10px;">🔒 Get Link</button>
+      <button class="btn btn-lock" id="btnGet" disabled style="margin-top:10px;">Открыть ссылку</button>
 
       <!-- loading bar (only for Get Link unlock flow) -->
       <div class="loader" id="loader">
@@ -433,8 +433,7 @@ Esign/Scarlet/Ksign Direct Install with newest certificate from KINST.
       </div>
 
       <div class="divider"></div>
-      <p class="fine">Note: Subscribe to the KINST channel to unlock the download.
-        Your support helps us keep improving the website.</p>
+      <p class="fine">Нажми «Продолжить», чтобы открыть ссылку на установку.</p>
 <center>
 
     </center>
@@ -444,11 +443,11 @@ Esign/Scarlet/Ksign Direct Install with newest certificate from KINST.
   <!-- HOW -->
   <div class="card">
     <div class="inner">
-      <div class="section-title">How it works</div>
-      <div class="step"><div class="dot"></div><div><b>Tap Subscribe Button</b><span> Open YouTube in new tab.</span></div></div>
-          <div class="step"><div class="dot"></div><div><b>Subscribe</b><span> Subscribe KINST Channel.</span></div></div>
-      <div class="step"><div class="dot"></div><div><b>Checking</b><span> Checking the Subscription.</span></div></div>
-      <div class="step"><div class="dot"></div><div><b>Get Link</b><span> Download unlocked.</span></div></div>
+      <div class="section-title">Как это работает</div>
+      <div class="step"><div class="dot"></div><div><b>Нажми «Продолжить»</b><span> Ссылка станет доступна сразу.</span></div></div>
+          <div class="step"><div class="dot"></div><div><b>Subscribe</b><span> Без подписок и рекламы.</span></div></div>
+      <div class="step"><div class="dot"></div><div><b>Checking</b><span> Подготовка ссылки.</span></div></div>
+      <div class="step"><div class="dot"></div><div><b>Get Link</b><span> Скачать unlocked.</span></div></div>
     </div>
   </div>
 
@@ -463,8 +462,8 @@ const btnGet = document.getElementById("btnGet");
 const loader = document.getElementById("loader");
 
 const EXPIRE    = 24 * 60 * 60 * 1000; // 24 hours
-const SUB_DELAY = 8000;                // checking subscription (ms)
-const WAIT_MS   = 6000;                // unlock get link (ms)
+const SUB_DELAY = 250;                // checking subscription (ms)
+const WAIT_MS   = 250;                // unlock get link (ms)
 
 function b64urlDecode(b64url){
   const b64 = b64url.replace(/-/g,'+').replace(/_/g,'/');
@@ -476,7 +475,7 @@ function b64urlDecode(b64url){
 function setSubLoading(){
   btnSub.className = "btn btn-sub-loading";
   btnSub.disabled = true;
-  btnSub.innerHTML = `<span class="spinner"></span><span>Checking subscription…</span>`;
+  btnSub.innerHTML = `<span class="spinner"></span><span>Подготовка ссылки…</span>`;
 }
 
 function setSubVerified(){
@@ -488,7 +487,7 @@ function setSubVerified(){
         <path d="M20 7L10 17l-5-5" stroke="#00ff6a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </span>
-    <span>Subscribed</span>
+    <span>Готово</span>
   `;
 }
 
@@ -505,21 +504,21 @@ function enableGet(dest){
   hideLoading();
   btnGet.className = "btn btn-go";
   btnGet.disabled = false;
-  btnGet.textContent = "🔓 Get Link";
+  btnGet.textContent = "Открыть ссылку";
   btnGet.onclick = () => location.href = dest;
 }
 
 function startUnlockFlow(dest){
-  lockGet("⏳ Unlocking…");
+  lockGet("Подготовка…");
   showLoading();
   setTimeout(() => enableGet(dest), WAIT_MS);
 }
 
 try{
-  if(!token) throw new Error("Missing token");
+  if(!token) throw new Error("Отсутствует ссылка");
 
   const p = JSON.parse(b64urlDecode(token));
-  if(!p.y || !p.d) throw new Error("Invalid payload");
+  if(!p.y || !p.d) throw new Error("Некорректная ссылка");
 
   const key = "applejr_" + token;
   const saved = JSON.parse(localStorage.getItem(key) || "null");
@@ -530,7 +529,7 @@ try{
     setSubVerified();
     enableGet(p.d);
   } else {
-    lockGet("🔒 Get Link (locked)");
+    lockGet("Открыть ссылку (locked)");
 
     btnSub.onclick = () => {
       setSubLoading();
@@ -547,8 +546,8 @@ try{
 } catch(e){
   btnSub.disabled = true;
   btnSub.className = "btn btn-sub-loading";
-  btnSub.textContent = "Invalid link";
-  lockGet("Invalid link");
+  btnSub.textContent = "Неверная ссылка";
+  lockGet("Неверная ссылка");
   hideLoading();
 }
 </script>
