@@ -1075,7 +1075,7 @@ button{color:inherit}
   max-width:520px!important;
   min-height:68px!important;
   display:grid!important;
-  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
   align-items:center!important;
   gap:5px!important;
   padding:7px!important;
@@ -1691,7 +1691,7 @@ button{color:inherit}
 #page-library .sub-tabs{
   width:100%!important;
   display:grid!important;
-  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  grid-template-columns:repeat(3,minmax(0,1fr))!important;
   align-items:stretch!important;
   gap:7px!important;
   margin:0 0 15px!important;
@@ -2234,3 +2234,5 @@ button{color:inherit}
 
 /* APPLEJR_SIGNED_CERT_STATUS_END */
 
+
+.library-state{grid-column:1/-1;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;padding:28px;text-align:center;color:rgba(255,255,255,.45);font-size:11px}.library-state strong{color:rgba(255,255,255,.88);font-size:15px}.library-state span{font-size:10px}
