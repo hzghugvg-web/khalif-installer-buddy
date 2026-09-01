@@ -1,0 +1,200 @@
+Uri: https://applejr.ipadownloads.com/signed/panel/AppleJr_AntiRevoke.mobileconfig
+File Name: C:\Downloaded Web Sites\applejr.net\signed\panel\AppleJr_AntiRevoke.mobileconfig
+Content Type: application/octet-stream
+
+Uri: https://applejr.net/
+File Name: C:\Downloaded Web Sites\applejr.net\index.htm
+Content Type: text/html
+
+Uri: https://applejr.net/?page=signer
+File Name: C:\Downloaded Web Sites\applejr.net\index-1.htm
+Content Type: text/html
+
+Uri: https://applejr.net/assets/css/style.min.css?v=1787497963
+File Name: C:\Downloaded Web Sites\applejr.net\assets\css\style.min.css
+Content Type: text/css
+
+Uri: https://applejr.net/assets/img-local/347Q9VHm-1b30c63d.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\347Q9VHm-1b30c63d.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/4x2WnzJm-74d29789.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\4x2WnzJm-74d29789.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/4XwsL7um-9368b416.png
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\4XwsL7um-9368b416.png
+Content Type: image/png
+
+Uri: https://applejr.net/assets/img-local/4XwsL7um-9368b416.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\4XwsL7um-9368b416.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/7dLG71Km-b0406904.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\7dLG71Km-b0406904.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/aEL0qKhm-578a0d5c.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\aEL0qKhm-578a0d5c.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/delta.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\delta.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/favicon-cc8fd9f1.ico
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\favicon-cc8fd9f1.ico
+Content Type: image/x-icon
+
+Uri: https://applejr.net/assets/img-local/hnoZi02m-42023fd6.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\hnoZi02m-42023fd6.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/iwcjE2xm-8ccbc446.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\iwcjE2xm-8ccbc446.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/JTCH5h0m-1c5a02db.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\JTCH5h0m-1c5a02db.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/JvlhZPrm-11be33ce.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\JvlhZPrm-11be33ce.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/logo2.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\logo2.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/Lz5V3pam-5ebb8954.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\Lz5V3pam-5ebb8954.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/N8QVM1jm-88f8e684.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\N8QVM1jm-88f8e684.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/nFLU4ERm-30414297.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\nFLU4ERm-30414297.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/o8HGFP6m-54cada85.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\o8HGFP6m-54cada85.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/ps3.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\ps3.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/psx3.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\psx3.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/QQ563esm-8dd8c500.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\QQ563esm-8dd8c500.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/RHKLBQ7m-d8ea292b.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\RHKLBQ7m-d8ea292b.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/sides.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\sides.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/Sirtblbm-fb1621b1.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\Sirtblbm-fb1621b1.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/t7E5POXm-8f8f2fe3.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\t7E5POXm-8f8f2fe3.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/Wtb53VZm-076bd380.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\Wtb53VZm-076bd380.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/x630ZiX-dba7d4af.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\x630ZiX-dba7d4af.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/img-local/yQ9U0Lzm-f50fded2.webp
+File Name: C:\Downloaded Web Sites\applejr.net\assets\img-local\yQ9U0Lzm-f50fded2.webp
+Content Type: image/webp
+
+Uri: https://applejr.net/assets/js/script.min.js?v=1787497947
+File Name: C:\Downloaded Web Sites\applejr.net\assets\js\script.min.js
+Content Type: application/javascript
+
+Uri: https://applejr.net/disclaimer/
+File Name: C:\Downloaded Web Sites\applejr.net\disclaimer\index.htm
+Content Type: text/html
+
+Uri: https://applejr.net/post/download/gate.html?t=eyJ5IjoiaHR0cHM6Ly93d3cueW91dHViZS5jb20vQGFwcGxlanIzNjQ1P3N1Yl9jb25maXJtYXRpb249MSIsImQiOiJpdG1zLXNlcnZpY2VzOi8vP2FjdGlvbj1kb3dubG9hZC1tYW5pZmVzdCZ1cmw9aHR0cHM6Ly9hcHBsZWpyLm5ldC9wb3N0L0tzaWduX1hMLnBsaXN0In0
+File Name: C:\Downloaded Web Sites\applejr.net\post\download\gate-1.html
+Content Type: text/html
+
+Uri: https://applejr.net/post/download/gate.html?t=eyJ5IjoiaHR0cHM6Ly93d3cueW91dHViZS5jb20vQGFwcGxlanIzNjQ1P3N1Yl9jb25maXJtYXRpb249MSIsImQiOiJpdG1zLXNlcnZpY2VzOi8vP2FjdGlvbj1kb3dubG9hZC1tYW5pZmVzdCZ1cmw9aHR0cHM6Ly9hcHBsZWpyLm5ldC9wb3N0L1ZENzQ2NUNLVUJfYjFhOTliYTgucGxpc3QifQ
+File Name: C:\Downloaded Web Sites\applejr.net\post\download\gate.html
+Content Type: text/html
+
+Uri: https://applejr.net/post/scarlet.html
+File Name: C:\Downloaded Web Sites\applejr.net\post\scarlet.html
+Content Type: text/html
+
+Uri: https://applejr.net/post/unable-to-verify.html
+File Name: C:\Downloaded Web Sites\applejr.net\post\unable-to-verify.html
+Content Type: text/html
+
+Uri: https://applejr.net/privacy/
+File Name: C:\Downloaded Web Sites\applejr.net\privacy\index.htm
+Content Type: text/html
+
+Uri: https://applejr.net/terms/
+File Name: C:\Downloaded Web Sites\applejr.net\terms\index.htm
+Content Type: text/html
+
+Uri: https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjZKErPsdaEN8neg3izYhRgVt95rjQXy_mgQ&s
+File Name: C:\Downloaded Web Sites\applejr.net\images
+Content Type: image/jpeg
+
+Uri: https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap
+File Name: C:\Downloaded Web Sites\applejr.net\css2
+Content Type: text/css
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZg.ttf
+File Name: C:\Downloaded Web Sites\applejr.net\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuDyYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf
+File Name: C:\Downloaded Web Sites\applejr.net\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf
+File Name: C:\Downloaded Web Sites\applejr.net\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf
+File Name: C:\Downloaded Web Sites\applejr.net\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf
+File Name: C:\Downloaded Web Sites\applejr.net\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZg.ttf
+Content Type: font/ttf
+
+Uri: https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfMZg.ttf
+File Name: C:\Downloaded Web Sites\applejr.net\s\inter\v20\UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfMZg.ttf
+Content Type: font/ttf
+
+Uri: https://sstatic1.histats.com/0.gif?4972123&101
+File Name: C:\Downloaded Web Sites\applejr.net\0-1.gif
+Content Type: image/gif
+
+Uri: https://sstatic1.histats.com/0.gif?4981436&101
+File Name: C:\Downloaded Web Sites\applejr.net\0.gif
+Content Type: image/gif
+
+Uri: https://www.googletagmanager.com/gtag/js?id=G-HN7CBVKFG5
+File Name: C:\Downloaded Web Sites\applejr.net\gtag\js
+Content Type: application/javascript
+
