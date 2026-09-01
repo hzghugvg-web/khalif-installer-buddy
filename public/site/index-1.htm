@@ -11,7 +11,6 @@
 
   gtag('config', 'G-HN7CBVKFG5');
 </script>
-<meta content="width=device-width, initial-scale=1" name="viewport">
 <meta charset="utf-8">
 <meta content="yes" name="mobile-web-app-capable">
 <meta content="#1abc9c" name="theme-color">
@@ -22,24 +21,24 @@
 <link href="assets/img-local/favicon-cc8fd9f1.ico" rel="apple-touch-icon">
 <link href="assets/img-local/favicon-cc8fd9f1.ico" rel="shortcut icon">
 <link rel="canonical" href="index.htm">
-<title>AppleJr – iOS IPA Installer, ESign, Scarlet, KSign &amp; IPA Signer</title>
-<meta content="Install and sign IPA files on iPhone and iPad with AppleJr. Find ESign, KSign, Scarlet, certificates, DNS tools, jailbreak utilities, and more." name="description">
-<meta content="AppleJr" name="author">
-<meta content="AppleJr – iOS IPA Installer, ESign, Scarlet, KSign &amp; IPA Signer" property="og:title">
-<meta content="Install and sign IPA files on iPhone and iPad with AppleJr. Find ESign, KSign, Scarlet, certificates, DNS tools, and iOS utilities." property="og:description">
+<title>KINST – iOS IPA Installer, ESign, Scarlet, KSign &amp; IPA Signer</title>
+<meta content="Install и sign IPA files on iPhone и iPad with KINST. Find ESign, KSign, Scarlet, certificates, DNS tools, jailbreak utilities, и more." name="description">
+<meta content="KINST" name="author">
+<meta content="KINST – iOS IPA Installer, ESign, Scarlet, KSign &amp; IPA Signer" property="og:title">
+<meta content="Install и sign IPA files on iPhone и iPad with KINST. Find ESign, KSign, Scarlet, certificates, DNS tools, и iOS utilities." property="og:description">
 <meta content="https://applejr.net/" property="og:url">
 <meta content="website" property="og:type">
-<meta content="AppleJr" property="og:site_name">
+<meta content="KINST" property="og:site_name">
 <meta property="og:image" content="https://applejr.net/assets/img-local/QQ563esm-8dd8c500.png">
 <meta content="320" property="og:image:width">
 <meta content="320" property="og:image:height">
-<meta content="AppleJr iOS IPA Installer" property="og:image:alt">
+<meta content="KINST iOS IPA Installer" property="og:image:alt">
 <meta content="summary" name="twitter:card">
-<meta content="AppleJr – iOS IPA Installer, ESign, Scarlet &amp; KSign" name="twitter:title">
-<meta content="Install and sign IPA files on iPhone and iPad with ESign, KSign, Scarlet, certificates, DNS tools, and more." name="twitter:description">
-<meta content="@AppleJr" name="twitter:site">
+<meta content="KINST – iOS IPA Installer, ESign, Scarlet &amp; KSign" name="twitter:title">
+<meta content="Install и sign IPA files on iPhone и iPad with ESign, KSign, Scarlet, certificates, DNS tools, и more." name="twitter:description">
+<meta content="@KINST" name="twitter:site">
 <meta name="twitter:image" content="https://applejr.net/assets/img-local/QQ563esm-8dd8c500.png">
-<meta content="AppleJr iOS IPA Installer" name="twitter:image:alt">
+<meta content="KINST iOS IPA Installer" name="twitter:image:alt">
 <meta name="robots" content="index, follow">
 <link href="//repo.ethsign.fyi" rel="dns-prefetch">
 <link href="//t.me" rel="dns-prefetch">
@@ -52,21 +51,69 @@
   "@context": "https://schema.org",
   "@type": "WebSite",
   "url": "https://applejr.net/",
-  "name": "AppleJr",
+  "name": "KINST",
   "alternateName": "applejr.net"
 }
 </script>
 <link href="assets/css/style.min.css?v=1787497963" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="KINST">
+<link rel="apple-touch-icon" href="assets/img-local/favicon-cc8fd9f1.ico">
+<style id="kinst-overrides">
+  :root{ --kinst-ease: cubic-bezier(.22,1,.36,1); }
+  html, body { -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; touch-action: pan-y; overscroll-behavior-y: contain; }
+  input, textarea, [contenteditable="true"] { -webkit-user-select:text; user-select:text; }
+  img, a { -webkit-touch-callout: none !important; -webkit-user-drag: none; }
+  * { transition-timing-function: var(--kinst-ease) !important; }
+  .card, .featured-item, .featured-card, .hero-card, .badge, .nav-link, .sub-tab, .tool-cat, .bottom-nav-glass, .modal-content{
+    transition: transform .5s var(--kinst-ease), box-shadow .5s var(--kinst-ease), background .5s var(--kinst-ease), color .5s var(--kinst-ease), opacity .5s var(--kinst-ease), border-color .5s var(--kinst-ease) !important;
+  }
+  .badge:hover, .nav-link:hover, .sub-tab:hover, .tool-cat:hover { transform: translateY(-1px); }
+  .card:hover, .featured-item:hover { transform: translateY(-3px); }
+  @keyframes kinstFadeUp { from { opacity:0; transform: translateY(14px);} to {opacity:1; transform:none;} }
+  .page.active > .page-container > * { animation: kinstFadeUp .55s var(--kinst-ease) both; }
+  .page.active > .page-container > *:nth-child(2){ animation-delay:.05s;}
+  .page.active > .page-container > *:nth-child(3){ animation-delay:.10s;}
+  .page.active > .page-container > *:nth-child(4){ animation-delay:.15s;}
+  #pageTitle{ letter-spacing:.14em; font-weight:900; background:none !important; -webkit-text-fill-color: initial; color: #fff;}
+  #pageTitle small{display:block;font-size:.42em;letter-spacing:.24em;opacity:.65;font-weight:600;margin-top:2px;}
+  /* Add-to-home overlay */
+  #kinstA2H{position:fixed;inset:0;z-index:99999;background:radial-gradient(120% 90% at 50% 0%,#151a2b 0%,#07080d 60%);color:#fff;font-family:Inter,system-ui,-apple-system,sans-serif;padding:28px 22px;display:none;flex-direction:column;overflow-y:auto;animation:kinstFadeUp .55s var(--kinst-ease) both;}
+  #kinstA2H.show{display:flex;}
+  #kinstA2H .logo{font-weight:900;font-size:44px;letter-spacing:.18em;text-align:center;margin:14px 0 4px;}
+  #kinstA2H .sub{opacity:.7;text-align:center;font-size:13px;letter-spacing:.14em;margin-bottom:22px;}
+  #kinstA2H h2{font-size:22px;margin:0 0 6px;text-align:center;}
+  #kinstA2H p.lead{opacity:.8;text-align:center;margin:0 0 22px;font-size:14px;line-height:1.5;}
+  #kinstA2H ol{list-style:none;padding:0;margin:0;display:grid;gap:12px;}
+  #kinstA2H li{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;}
+  #kinstA2H li .n{flex:0 0 32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#1abc9c,#0ea5e9);display:flex;align-items:center;justify-content:center;font-weight:800;}
+  #kinstA2H li b{display:block;margin-bottom:2px;}
+  #kinstA2H li span{opacity:.75;font-size:13px;line-height:1.5;}
+  #kinstA2H .hint{margin-top:18px;text-align:center;font-size:12px;opacity:.55;}
+  #kinstA2H .cta{margin:22px auto 8px;background:linear-gradient(135deg,#1abc9c,#0ea5e9);color:#fff;border:0;padding:14px 22px;border-radius:14px;font-weight:700;font-size:15px;letter-spacing:.04em;box-shadow:0 10px 30px -10px rgba(26,188,156,.6);}
+  #kinstA2H .icn{display:inline-block;width:22px;height:22px;vertical-align:-6px;margin:0 4px;}
+  /* Instructions modal */
+  #kinstHelpBtn{position:fixed;right:14px;bottom:82px;z-index:9998;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;backdrop-filter: blur(12px);border-radius:999px;padding:10px 14px;font-weight:700;font-size:13px;box-shadow:0 10px 24px -12px #000;}
+  #kinstHelp{position:fixed;inset:0;z-index:99998;background:rgba(6,8,14,.72);backdrop-filter:blur(8px);display:none;align-items:flex-end;justify-content:center;}
+  #kinstHelp.show{display:flex;animation:kinstFadeUp .4s var(--kinst-ease) both;}
+  #kinstHelp .sheet{width:100%;max-width:520px;background:#0f1220;color:#fff;border-radius:22px 22px 0 0;padding:22px 22px 32px;max-height:88vh;overflow-y:auto;border:1px solid rgba(255,255,255,.08);}
+  #kinstHelp h3{margin:0 0 10px;font-size:20px;}
+  #kinstHelp h4{margin:16px 0 6px;font-size:14px;color:#1abc9c;letter-spacing:.08em;text-transform:uppercase;}
+  #kinstHelp p, #kinstHelp li{font-size:14px;line-height:1.55;opacity:.85;}
+  #kinstHelp ol, #kinstHelp ul{padding-left:20px;margin:6px 0;}
+  #kinstHelp .close{position:sticky;top:0;float:right;background:rgba(255,255,255,.08);border:0;color:#fff;width:34px;height:34px;border-radius:50%;font-size:20px;line-height:34px;}
+</style>
 </head>
 <body>
 <main id="main-content">
 <header class="topbar" id="applejrTopbar">
-<div class="brand">
-<h1 id="pageTitle">Apple<span>Jr</span></h1>
-<p>iOS Apps • IPA Installer • Signer</p>
+<div class="brи">
+<h1 id="pageTitle">KINST<small>KHALIFINSTALLER</small></h1>
+<p>iOS Приложения • Установщик IPA • Подпись</p>
 </div>
 <div class="header-actions">
-<button aria-label="Refresh AppleJr" class="icon-btn" id="refreshButton" type="button">
+<button aria-label="Обновить KINST" class="icon-btn" id="refreshButton" type="button">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M17.65 6.35A7.95 7.95 0 0 0 12 4a8 8 0 1 0 7.75 10h-2.1A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35Z"></path>
 </svg>
@@ -75,14 +122,14 @@
 </header>
 <div class="page active" id="page-library">
 <div class="page-container">
-<section aria-label="Featured AppleJr content" class="hero-section">
+<section aria-label="Featured KINST content" class="hero-section">
 <div class="hero-slider" id="featuredSlider">
 <article class="featured-card hero-card hero-green" data-feature="esign">
 <div class="hero-content">
-<span class="hero-badge">FEATURED</span>
-<h3 class="hero-title">Fix <span>Unable</span><br>to Install?</h3>
-<p>Get ESign, Scarlet or KSign working again.</p>
-<button class="hero-button" type="button">View Guide <span>→</span></button>
+<span class="hero-badge">ХИТ</span>
+<h3 class="hero-title">Не устанавливается? <span>Почини</span><br>за минуту</h3>
+<p>Верни к жизни ESign, Scarlet или KSign.</p>
+<button class="hero-button" type="button">Открыть гайд <span>→</span></button>
 </div>
 <div class="hero-art">
 <img alt="ESign iOS app icon" class="hero-icon hero-esign" decoding="async" fetchpriority="high" height="320" loading="eager" src="assets/img-local/o8HGFP6m-54cada85.webp" width="320">
@@ -93,9 +140,9 @@
 <article class="featured-card hero-card hero-purple" data-feature="library">
 <div class="hero-content">
 <span class="hero-badge">APPLEJR</span>
-<h3 class="hero-title">IPA <span>Library</span></h3>
-<p>Discover iOS tools, emulators and utilities.</p>
-<button class="hero-button" type="button">Explore Apps <span>→</span></button>
+<h3 class="hero-title">IPA <span>Библиотека</span></h3>
+<p>iOS-тулзы, эмуляторы и утилиты в одном месте.</p>
+<button class="hero-button" type="button">Смотреть приложения <span>→</span></button>
 </div>
 <div class="hero-art">
 <img alt="SideStore iOS installer" class="hero-single" decoding="async" height="1024" loading="lazy" src="assets/img-local/sides.webp" width="1024">
@@ -103,20 +150,20 @@
 </article>
 <article class="featured-card hero-card hero-blue" data-feature="signer">
 <div class="hero-content">
-<span class="hero-badge">SIGNER</span>
-<div class="hero-title">Sign Your <span>IPA</span></div>
-<p>Upload and sign compatible IPA files directly.</p>
-<button class="hero-button" type="button">Open Signer <span>→</span></button>
+<span class="hero-badge">ПОДПИСЬ</span>
+<div class="hero-title">Подпиши свой <span>IPA</span></div>
+<p>Загрузи IPA — подпишем прямо с телефона.</p>
+<button class="hero-button" type="button">Открыть подпись <span>→</span></button>
 </div>
 <div class="hero-art">
-<img alt="AppleJr DNS icon" class="hero-single" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
+<img alt="KINST DNS icon" class="hero-single" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
 </div>
 </article>
 <article class="featured-card hero-card hero-delta" data-feature="delta">
 <div class="hero-content">
-<span class="hero-badge">DIRECT INSTALL</span>
+<span class="hero-badge">ПРЯМАЯ УСТАНОВКА</span>
 <h3 class="hero-title">Delta <span>Executor</span></h3>
-<p>Direct install the latest Delta Executor for iOS (New Certificate).</p>
+<p>Прямая установка Delta Executor для iOS (новый сертификат).</p>
 <a class="hero-button hero-direct-install" href="itms-services://?action=download-manifest&url=https://github.com/royilkom-alt/downloads/raw/refs/heads/main/delta-executor-ios-directinstall.plist">Install <span>→</span></a>
 </div>
 <div class="hero-art">
@@ -133,8 +180,8 @@
 </section>
 <div class="featured-simple featured-pro">
 <div class="featured-header">
-    ⭐ Featured
-    <span class="featured-chip">SLIDE</span>
+    ⭐ Рекомендуем
+    <span class="featured-chip">ПОДБОРКА</span>
 </div>
 <div class="featured-grid">
 <div class="featured-item pro" data-badge="HOT">
@@ -143,7 +190,7 @@
 <div class="f-title">Minecraft</div>
 <div class="f-desc">Java Edition iOS</div>
 </div>
-<a class="badge" href="https://youtu.be/NlJRqqMwZ5w?si=qsT3lL61bMILIYHf">Install</a>
+<a class="badge" href="https://youtu.be/NlJRqqMwZ5w?si=qsT3lL61bMILIYHf">Установить</a>
 </div>
 <div class="featured-item pro" data-badge="v2.735">
 <img alt="Delta Executor" decoding="async" height="600" loading="lazy" src="assets/img-local/delta.webp" width="600">
@@ -151,7 +198,7 @@
 <div class="f-title">Delta Executor</div>
 <div class="f-desc">iOS Direct Install Method</div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/royilkom-alt/downloads/raw/refs/heads/main/delta-executor-ios-directinstall.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/royilkom-alt/downloads/raw/refs/heads/main/delta-executor-ios-directinstall.plist">Установить</a>
 </div>
 <div class="featured-item pro" data-badge="VIRAL">
 <img alt="PlayStation 3 emulator for iOS" decoding="async" height="320" loading="lazy" src="assets/img-local/ps3.webp" width="319">
@@ -159,7 +206,7 @@
 <div class="f-title">PlayStation 3 iOS</div>
 <div class="f-desc">Install PS3 Games</div>
 </div>
-<a class="badge" href="https://youtu.be/iMyuoEfYx7o?si=2ggWqyhua4CA4s5v">Install</a>
+<a class="badge" href="https://youtu.be/iMyuoEfYx7o?si=2ggWqyhua4CA4s5v">Установить</a>
 </div>
 <div class="featured-item">
 <img alt="Auto Clicker for iOS" decoding="async" height="320" loading="lazy" src="assets/img-local/iwcjE2xm-8ccbc446.webp" width="320">
@@ -167,7 +214,7 @@
 <div class="f-title">Auto Clicker</div>
 <div class="f-desc">Auto Clicker iOS</div>
 </div>
-<a class="badge" href="https://youtu.be/tsJj330FU4E?si=rA22HPFgvZYpFd4Y">Install</a>
+<a class="badge" href="https://youtu.be/tsJj330FU4E?si=rA22HPFgvZYpFd4Y">Установить</a>
 </div>
 <div class="featured-item">
 <img alt="Apple Music for iOS" decoding="async" height="320" loading="lazy" src="assets/img-local/JTCH5h0m-1c5a02db.webp" width="320">
@@ -175,7 +222,7 @@
 <div class="f-title">Apple Music</div>
 <div class="f-desc">Get Free Apple Music</div>
 </div>
-<a class="badge" href="https://youtu.be/9jw1Q2fU2ho?si=UOPL3av5KK9BnPgE">Install</a>
+<a class="badge" href="https://youtu.be/9jw1Q2fU2ho?si=UOPL3av5KK9BnPgE">Установить</a>
 </div>
 </div>
 </div>
@@ -194,20 +241,20 @@
 
 <div class="sub-tab" data-cat="sideinstaller">SideInstaller</div>
 
-<div class="sub-tab" data-cat="certificate">Certs</div>
+<div class="sub-tab" data-cat="certificate">Сертификаты</div>
 </div>
 <section aria-labelledby="heading-esign" class="cat-list" id="cat-esign">
-<h2 class="category-heading" id="heading-esign">ESign iOS Installer</h2>
+<h2 class="category-heading" id="heading-esign">ESign — установщик iOS</h2>
 <div class="card">
 <div class="left">
-<img alt="AppleJr DNS icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
+<img alt="KINST DNS icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
 <div>
-<h3>AppleJr DNS</h3>
+<h3>KINST DNS</h3>
 <small class="meta">
-<span class="dot-green-mini"></span> Anti-Revoke</small>
+<span class="dot-green-mini"></span> Анти-Ревок</small>
 </div>
 </div>
-<a class="badge" href="signed/panel/AppleJr_AntiRevoke.mobileconfig">Install</a>
+<a class="badge" href="signed/panel/KINST_AntiRevoke.mobileconfig">Установить</a>
 </div>
 
 <div class="card moving-new-card">
@@ -467,17 +514,17 @@
 </div>
 </section>
 <section aria-labelledby="heading-ksign" class="cat-list" id="cat-zsign" style="display:none;">
-<h2 class="category-heading" id="heading-ksign">KSign iOS Installer</h2>
+<h2 class="category-heading" id="heading-ksign">KSign — установщик iOS</h2>
 <div class="card">
 <div class="left">
-<img alt="AppleJr DNS icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
+<img alt="KINST DNS icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
 <div>
-<h3>AppleJr DNS</h3>
+<h3>KINST DNS</h3>
 <small class="meta">
-<span class="dot-green-mini"></span> Anti-Revoke</small>
+<span class="dot-green-mini"></span> Анти-Ревок</small>
 </div>
 </div>
-<a class="badge" href="signed/panel/AppleJr_AntiRevoke.mobileconfig">Install</a>
+<a class="badge" href="signed/panel/KINST_AntiRevoke.mobileconfig">Установить</a>
 </div>
 <div class="card moving-new-card">
 <div class="left">
@@ -490,7 +537,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.ipadownloads.com/signed/ipainstaller/ksignsigned.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.ipadownloads.com/signed/ipainstaller/ksignsigned.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -503,7 +550,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/ksigncen.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/ksigncen.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -516,7 +563,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/royilkom-alt/applejrtools/raw/refs/heads/main/utdectxvchbd.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/royilkom-alt/applejrtools/raw/refs/heads/main/utdectxvchbd.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -529,7 +576,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/vietksign.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/vietksign.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -542,7 +589,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/royilkom-alt/applejr-nabz-repo/raw/refs/heads/main/msaa.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/royilkom-alt/applejr-nabz-repo/raw/refs/heads/main/msaa.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -555,7 +602,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/H663873Z9V_682b9973.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/H663873Z9V_682b9973.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -568,7 +615,7 @@
         </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/royilkom-alt/applejr-nabz-repo/refs/heads/main/ksignplistnewchin.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/royilkom-alt/applejr-nabz-repo/refs/heads/main/ksignplistnewchin.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -581,7 +628,7 @@
         </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/haduongyenn-ui/haduongyenn-ui.github.io/refs/heads/main/plist/aiwjy.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/haduongyenn-ui/haduongyenn-ui.github.io/refs/heads/main/plist/aiwjy.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -594,7 +641,7 @@
         </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Ksign11.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Ksign11.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -607,7 +654,7 @@
         </small>
 </div>
 </div>
-<a class="badge" href="https://api.khoindvn.io.vn/a71JoP">Install</a>
+<a class="badge" href="https://api.khoindvn.io.vn/a71JoP">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -619,7 +666,7 @@
         </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/haduongyenn-ui/haduongyenn-ui.github.io/raw/refs/heads/main/Plist/ojrma.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://github.com/haduongyenn-ui/haduongyenn-ui.github.io/raw/refs/heads/main/Plist/ojrma.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -631,21 +678,21 @@
         </small>
 </div>
 </div>
-<a class="badge" href="post/download/gate-1.html?t=eyJ5IjoiaHR0cHM6Ly93d3cueW91dHViZS5jb20vQGFwcGxlanIzNjQ1P3N1Yl9jb25maXJtYXRpb249MSIsImQiOiJpdG1zLXNlcnZpY2VzOi8vP2FjdGlvbj1kb3dubG9hZC1tYW5pZmVzdCZ1cmw9aHR0cHM6Ly9hcHBsZWpyLm5ldC9wb3N0L0tzaWduX1hMLnBsaXN0In0">Install</a>
+<a class="badge" href="post/download/gate-1.html?t=eyJ5IjoiaHR0cHM6Ly93d3cueW91dHViZS5jb20vQGFwcGxlanIzNjQ1P3N1Yl9jb25maXJtYXRpb249MSIsImQiOiJpdG1zLXNlcnZpY2VzOi8vP2FjdGlvbj1kb3dubG9hZC1tYW5pZmVzdCZ1cmw9aHR0cHM6Ly9hcHBsZWpyLm5ldC9wb3N0L0tzaWduX1hMLnBsaXN0In0">Установить</a>
 </div>
 </section>
 <section aria-labelledby="heading-scarlet" class="cat-list" id="cat-scarlet" style="display:none;">
-<h2 class="category-heading" id="heading-scarlet">Scarlet iOS Installer</h2>
+<h2 class="category-heading" id="heading-scarlet">Scarlet — установщик iOS</h2>
 <div class="card">
 <div class="left">
-<img alt="AppleJr DNS icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
+<img alt="KINST DNS icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
 <div>
-<h3>AppleJr DNS</h3>
+<h3>KINST DNS</h3>
 <small class="meta">
-<span class="dot-green-mini"></span> Anti-Revoke</small>
+<span class="dot-green-mini"></span> Анти-Ревок</small>
 </div>
 </div>
-<a class="badge" href="signed/panel/AppleJr_AntiRevoke.mobileconfig">Install</a>
+<a class="badge" href="signed/panel/KINST_AntiRevoke.mobileconfig">Установить</a>
 </div>
 <div class="card moving-new-card">
 <div class="left">
@@ -658,7 +705,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_APPLEJR_NEW_CER_f072b65a.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_APPLEJR_NEW_CER_f072b65a.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -671,7 +718,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_BUILD2_NEW_CERT_AUTOLOAD_ENCRYPTED_UNSIGNED_a3d941f9.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_BUILD2_NEW_CERT_AUTOLOAD_ENCRYPTED_UNSIGNED_a3d941f9.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -684,7 +731,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_BUILD2_NEW_CERT_AUTOLOAD_ENCRYPTED_UNSIGNED_a3d941f9.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_BUILD2_NEW_CERT_AUTOLOAD_ENCRYPTED_UNSIGNED_a3d941f9.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -697,7 +744,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_AppleJr_Rural_UNSIGNED_d0ba0996.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_KINST_Rural_UNSIGNED_d0ba0996.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -710,7 +757,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/scarlet_applejr_new1_unsigned-0e00b0d7_11b108c6.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/scarlet_applejr_new1_unsigned-0e00b0d7_11b108c6.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -723,7 +770,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/scarlet_applejr_vietrubber_unsigned-572ae750_8ba8bd5e.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/scarlet_applejr_vietrubber_unsigned-572ae750_8ba8bd5e.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -736,7 +783,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fscarlet_movingcert_keep_old_password_unsigned-90929e91_3b84c550.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fscarlet_movingcert_keep_old_password_unsigned-90929e91_3b84c550.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -749,7 +796,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/scarlet_applejr_vietnamairlinesjsc5_unsigned-c76cbda6_77e3599a.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/scarlet_applejr_vietnamairlinesjsc5_unsigned-c76cbda6_77e3599a.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -762,7 +809,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/scarlet_applejr_chinatelecom_unsigned-627da7db_22089ddc.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/scarlet_applejr_chinatelecom_unsigned-627da7db_22089ddc.plist">Установить</a>
 </div>
 <div class="card">
 <div class="left">
@@ -775,7 +822,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_AppleJr_Xibei2_UNSIGNED_d6cbb738.plist">Install</a>
+<a class="badge" href="itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_KINST_Xibei2_UNSIGNED_d6cbb738.plist">Установить</a>
 </div>
 </section>
 
@@ -783,16 +830,16 @@
 <h2 class="category-heading" id="heading-sideinstaller">SideInstaller for iOS</h2>
 <div class="card">
 <div class="left">
-<img alt="AppleJr DNS icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
+<img alt="KINST DNS icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/QQ563esm-8dd8c500.webp" width="320">
 <div>
-<h3>AppleJr DNS</h3>
+<h3>KINST DNS</h3>
 <small class="meta">
 <span class="dot-green-mini"></span>
-          Anti-Revoke
+          Анти-Ревок
         </small>
 </div>
 </div>
-<a class="badge" href="signed/panel/AppleJr_AntiRevoke.mobileconfig">
+<a class="badge" href="signed/panel/KINST_AntiRevoke.mobileconfig">
       Install
     </a>
 </div>
@@ -919,7 +966,7 @@
 </section>
 
 <section aria-labelledby="heading-certificates" class="cat-list" id="cat-certificate" style="display:none;">
-<h2 class="category-heading" id="heading-certificates">iOS Signing Certificates</h2>
+<h2 class="category-heading" id="heading-certificates">Сертификаты подписи iOS</h2>
 <div class="card moving-new-card">
 <div class="left">
 <img alt="iOS signing certificate icon" class="app-icon" decoding="async" height="320" loading="lazy" src="assets/img-local/aEL0qKhm-578a0d5c.webp" width="320">
@@ -931,7 +978,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/HSBC%20Bank.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/HSBC%20Bank.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -944,7 +991,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/CentralPower.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/CentralPower.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -957,7 +1004,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/Jiangsu%20Simcere.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/Jiangsu%20Simcere.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -970,7 +1017,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/VietRubber.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/VietRubber.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -983,7 +1030,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/Moving.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/Moving.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -996,7 +1043,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/blob/main/vietnam.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/blob/main/vietnam.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -1009,7 +1056,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/China%20Telecom%20Corporation%20Limited.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/China%20Telecom%20Corporation%20Limited.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -1022,7 +1069,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/Xibei.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/Xibei.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -1048,7 +1095,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/Postal.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/Postal.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -1061,7 +1108,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/Rural.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/Rural.zip">Download</a>
 </div>
 <div class="card">
 <div class="left">
@@ -1073,7 +1120,7 @@
 </small>
 </div>
 </div>
-<a class="badge" href="https://github.com/royilkom-alt/AppleJr/raw/refs/heads/main/XL.zip">Download</a>
+<a class="badge" href="https://github.com/royilkom-alt/KINST/raw/refs/heads/main/XL.zip">Download</a>
 </div>
 </section></div>
 </div>
@@ -1084,7 +1131,7 @@
 <div>
 <span class="jailbreak-kicker">APPLEJR</span>
 <h3 class="" id="jailbreak-heading">📚 Jailbreak Tools</h3>
-<p>Direct-install tools and utilities for supported iPhone and iPad versions.</p>
+<p>Direct-install tools и utilities for supported iPhone и iPad versions.</p>
 </div>
 <span class="jailbreak-count">14 APPS</span>
 </div>
@@ -1092,90 +1139,90 @@
 <div aria-hidden="true" class="jailbreak-note-icon">i</div>
 <div class="jailbreak-note-copy">
 <strong>Before You Install</strong>
-<p>Tap <b>Install</b> to install the IPA directly. If it doesn’t install, make sure your certificate is trusted (Settings → General → VPN &amp; Device Management). You must <b>Install AppleJr DNS</b> to make it works. AppleJr DNS is recommended when this installation method requires it.</p>
+<p>Tap <b>Установить</b> to install the IPA directly. If it doesn’t install, make sure your certificate is trusted (Settings → General → VPN &amp; Device Management). You must <b>Install KINST DNS</b> to make it works. KINST DNS is recommended when this installation method requires it.</p>
 </div>
 </div>
 <article class="jb-required-card">
 <div class="jb-required-icon-wrap">
-<img alt="AppleJr DNS" decoding="async" height="320" loading="lazy" src="assets/img-local/yQ9U0Lzm-f50fded2.webp" width="320">
+<img alt="KINST DNS" decoding="async" height="320" loading="lazy" src="assets/img-local/yQ9U0Lzm-f50fded2.webp" width="320">
 </div>
 <div class="jb-required-copy">
 <span class="jb-required-label">REQUIRED</span>
-<div class="jailbreak-tool-title">AppleJr DNS</div>
+<div class="jailbreak-tool-title">KINST DNS</div>
 <p>Recommended before using supported direct-install options.</p>
 </div>
-<a class="jb-required-btn" href="signed/panel/AppleJr_AntiRevoke.mobileconfig">Install</a>
+<a class="jb-required-btn" href="signed/panel/KINST_AntiRevoke.mobileconfig">Установить</a>
 </article>
 <div class="jailbreak-grid">
 <article class="jailbreak-tool-card">
 <img alt="Dopamine jailbreak app" decoding="async" height="320" loading="lazy" src="assets/img-local/N8QVM1jm-88f8e684.webp" width="320">
 <div class="jailbreak-tool-title">Dopamine</div><p>Jailbreak iOS 15-26.1</p>
-<a href="itms-services://?action=download-manifest&url=https://applejr.net/post/Dopamine_V7.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https://applejr.net/post/Dopamine_V7.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Dopamine RootHide jailbreak app" decoding="async" height="320" loading="lazy" src="assets/img-local/N8QVM1jm-88f8e684.webp" width="320">
 <div class="jailbreak-tool-title">Dopamine RootHide</div><p>Jailbreak iOS 15-17</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fdopamine-roothide.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fdopamine-roothide.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="PS3 Emulator for iOS" decoding="async" height="1024" loading="lazy" src="assets/img-local/psx3.webp" width="1024">
 <div class="jailbreak-tool-title">PS3 Emulator</div><p>iOS 16-27</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fpsx3.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fpsx3.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Lara iOS app" decoding="async" height="320" loading="lazy" src="assets/img-local/Lz5V3pam-5ebb8954.webp" width="320">
 <div class="jailbreak-tool-title">Lara</div><p>iOS 26-16.0</p>
-<a href="itms-services://?action=download-manifest&url=https://applejr.net/post/lara.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https://applejr.net/post/lara.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="SideInstaller app icon" decoding="async" height="1024" loading="lazy" src="assets/img-local/logo2.webp" width="1024">
 <div class="jailbreak-tool-title">SideInstaller</div><p>SideStore / LiveContainer</p>
-<a href="itms-services://?action=download-manifest&url=https://applejr.net/post/sideinstallers.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https://applejr.net/post/sideinstallers.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Filza Escaped iOS app" decoding="async" height="320" loading="lazy" src="assets/img-local/Sirtblbm-fb1621b1.webp" width="320">
 <div class="jailbreak-tool-title">Filza Escaped</div><p>iOS 17.0-26.0.1</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ffilza.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ffilza.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="TrollInstallerX iOS app" decoding="async" height="320" loading="lazy" src="assets/img-local/t7E5POXm-8f8f2fe3.webp" width="320">
 <div class="jailbreak-tool-title">TrollInstallerX</div><p>iOS 14-16.6.1</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ftrollinstallerx.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ftrollinstallerx.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Fugu15 jailbreak app" decoding="async" height="1080" loading="lazy" src="assets/img-local/x630ZiX-dba7d4af.webp" width="1080">
 <div class="jailbreak-tool-title">Fugu15</div><p>Jailbreak iOS 15-15.4.1</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ffugu15.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ffugu15.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Xina15 jailbreak app" decoding="async" height="320" loading="lazy" src="assets/img-local/nFLU4ERm-30414297.webp" width="320">
 <div class="jailbreak-tool-title">Xina15</div><p>Jailbreak iOS 15-15.1</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fxina15.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fxina15.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="ShadowRocket iOS app" decoding="async" height="320" loading="lazy" src="assets/img-local/Wtb53VZm-076bd380.webp" width="320">
 <div class="jailbreak-tool-title">ShadowRocket</div><p>Tools</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fshadowrocket.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fshadowrocket.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Taurine jailbreak app" decoding="async" height="311" loading="lazy" src="assets/img-local/7dLG71Km-b0406904.webp" width="320">
 <div class="jailbreak-tool-title">Taurine</div><p>Jailbreak iOS 14-14.8</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ftaurine.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ftaurine.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Unc0ver jailbreak app" decoding="async" height="313" loading="lazy" src="assets/img-local/4x2WnzJm-74d29789.webp" width="320">
 <div class="jailbreak-tool-title">Unc0ver</div><p>Jailbreak iOS 11-14.3</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Func0ver.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Func0ver.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Chimera jailbreak app" decoding="async" height="320" loading="lazy" src="assets/img-local/hnoZi02m-42023fd6.webp" width="320">
 <div class="jailbreak-tool-title">Chimera</div><p>Jailbreak iOS 12-12.5.7</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fchimera.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Fchimera.plist">Установить</a>
 </article>
 <article class="jailbreak-tool-card">
 <img alt="Freya jailbreak app" decoding="async" height="320" loading="lazy" src="assets/img-local/JvlhZPrm-11be33ce.webp" width="320">
 <div class="jailbreak-tool-title">Freya</div><p>Jailbreak iOS 11-12.5.7</p>
-<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ffreya.plist">Install</a>
+<a href="itms-services://?action=download-manifest&url=https%3A%2F%2Fapplejr.net%2Fpost%2Ffreya.plist">Установить</a>
 </article>
 </div>
 </section>
@@ -1183,38 +1230,38 @@
 </div>
 <div class="page" id="page-signer"><div class="page-container">
 <form enctype="multipart/form-data" id="uploadForm">
-<h2>AppleJr IPA Signer</h2>
-<div class="drop-zone" id="dropZone">📥 Click here to Upload IPA</div>
+<h2>KINST IPA Signer</h2>
+<div class="drop-zone" id="dropZone">📥 Нажми, чтобы загрузить IPA</div>
 <input accept=".ipa" id="ipa_file" name="ipa_file" required="" style="display:none;" type="file">
 <div class="toggle-group">
-<span>🔐 Manual Certificate</span>
+<span>🔐 Ручной сертификат</span>
 <label class="switch"><input id="certToggle" type="checkbox"><span class="slider"></span></label>
 </div>
 <div id="serverCertSection">
 <label for="use_server_cert">
-  📁 Select from Server <br>
-<a class="dns-required-btn" href="signed/panel/AppleJr_AntiRevoke.mobileconfig" rel="noopener" target="_blank">🔏AppleJr DNS Required</a>
+  📁 Выбрать с сервера <br>
+<a class="dns-required-btn" href="signed/panel/KINST_AntiRevoke.mobileconfig" rel="noopener" target="_blank">🔏KINST DNS Required</a>
 </label>
 <select id="use_server_cert" name="use_server_cert">
-<option value="">-- Select Certificate --</option>
+<option value="">-- Выбери сертификат --</option>
         <option value="1. HSBC Bank (Signed ✅)">1. HSBC Bank (Signed ✅)</option><option value="2. CenPower">2. CenPower</option><option value="3. Jiangsu Simcere">3. Jiangsu Simcere</option><option value="4. VietRubber">4. VietRubber</option><option value="5. VIETNAM AIRLINES">5. VIETNAM AIRLINES</option><option value="6. Moving Increasingly">6. Moving Increasingly</option><option value="7. Qingdao">7. Qingdao</option><option value="8. China Telecom Corporation">8. China Telecom Corporation</option><option value="9. Xibei">9. Xibei</option>
       </select>
 </div>
 <div id="manualCertSection" style="display:none;">
-<label for="p12_file">🗳️ Certificate (.p12)</label>
+<label for="p12_file">🗳️ Сертификат (.p12)</label>
 <input accept=".p12" id="p12_file" name="p12_file" type="file">
-<label for="mobileprovision_file">📄 MobileProvision</label>
+<label for="mobileprovision_file">📄 MobileProvision профиль</label>
 <input accept=".mobileprovision" id="mobileprovision_file" name="mobileprovision_file" type="file">
-<label for="password">🔑 Certificate Password</label>
+<label for="password">🔑 Пароль сертификата</label>
 <input id="password" name="password" placeholder="Password" type="password">
 </div>
-<button id="submitBtn" type="submit">🚀 Sign IPA</button>
-<div id="loader">⏳ Signing... please wait</div>
+<button id="submitBtn" type="submit">🚀 Подписать IPA</button>
+<div id="loader">⏳ Подписываем… подожди</div>
 <div id="progressBar"><div></div></div>
 <div id="resultBtns">
-<a class="link-btn" href="#" id="installLink" target="_blank">📲 Install IPA</a>
-<a class="link-btn" href="#" id="downloadLink" target="_blank">⬇️ Download IPA</a>
-<a class="link-btn sign-new-btn" href="index-1.htm?page=signer" id="signNewBtn">🔁 Sign NEW IPA</a>
+<a class="link-btn" href="#" id="installLink" target="_blank">📲 Установить IPA</a>
+<a class="link-btn" href="#" id="downloadLink" target="_blank">⬇️ Скачать IPA</a>
+<a class="link-btn sign-new-btn" href="index-1.htm?page=signer" id="signNewBtn">🔁 Подписать другой IPA</a>
 </div>
 <center>
 <p>
@@ -1224,28 +1271,28 @@
 </div></div>
 <div class="page" id="page-tools">
 <div class="page-container">
-<h2>IPA Tools</h2>
+<h2>IPA Инструменты</h2>
 <p class="tools-note">
-  Download the IPA files listed below and install using<button class="text-btn goto-library" data-sub="esign">Esign</button><button class="text-btn goto-library" data-sub="scarlet">Scarlet.</button> <button class="text-btn goto-library" data-sub="zsign">Ksign</button> <button class="text-btn goto-library" data-sub="sideinstaller">SideInstaller</button>
-      Or install using<button class="text-btn goto-signer">AppleJr Signer</button>.
+  Скачай IPA ниже и установи через <button class="text-btn goto-library" data-sub="esign">Esign</button><button class="text-btn goto-library" data-sub="scarlet">Scarlet.</button> <button class="text-btn goto-library" data-sub="zsign">Ksign</button> <button class="text-btn goto-library" data-sub="sideinstaller">SideInstaller</button>
+       или подпиши в <button class="text-btn goto-signer">KINST Подпись</button>.
 </p>
 <div class="tools-search-glass">
 <span class="search-icon">🔍</span>
-<input autocomplete="off" id="toolsSearch" placeholder="Search by App name.…" type="text">
+<input autocomplete="off" id="toolsSearch" placeholder="Поиск по названию…" type="text">
 </div>
 <div class="tools-category">
-<button class="tool-cat active" data-cat="all">All</button>
-<button class="tool-cat" data-cat="emulator">Emulator</button>
-<button class="tool-cat" data-cat="jailbreak">Jailbreak</button>
-<button class="tool-cat" data-cat="tweak">Tweak</button>
-<button class="tool-cat" data-cat="games">Games</button>
-<button class="tool-cat" data-cat="social-media">Social Media</button>
-<button class="tool-cat" data-cat="music">Music</button>
-<button class="tool-cat" data-cat="photo-video">Photo &amp; Video</button>
+<button class="tool-cat active" data-cat="all">Все</button>
+<button class="tool-cat" data-cat="emulator">Эмуляторы</button>
+<button class="tool-cat" data-cat="jailbreak">Джейлбрейк</button>
+<button class="tool-cat" data-cat="tweak">Твики</button>
+<button class="tool-cat" data-cat="games">Игры</button>
+<button class="tool-cat" data-cat="social-media">Соцсети</button>
+<button class="tool-cat" data-cat="music">Музыка</button>
+<button class="tool-cat" data-cat="photo-video">Фото и видео</button>
 </div>
 <div class="tools-grid" id="toolsGrid"></div>
 <button class="badge" id="toolsLoadMore" style="margin-top:16px;display:none;">
-      Load More
+      Показать ещё
     </button>
 </div>
 </div>
@@ -1253,24 +1300,24 @@
 <div class="modal" id="featureModal"><div class="modal-content"><button class="modal-close" id="modalClose">×</button><div id="modalBody"></div></div></div>
 <footer class="applejr-footer">
 <div class="applejr-seo-intro">
-<p>AppleJr is an iOS IPA installer and signing platform for iPhone and iPad. Find current ESign, KSign, Scarlet and SideInstaller options, iOS signing certificates, IPA tools, jailbreak utilities and installation guides.</p>
-<p>You can also use the AppleJr IPA Signer to sign your own IPA file or check our guides for <a href="post/scarlet.html"><strong>Scarlet iOS</strong></a> and <a href="post/unable-to-verify.html"><strong>Unable to Verify App</strong></a> issues.</p>
+<p>KINST — установщик IPA для iOS  и платформа подписи для iPhone и iPad. Актуальные ESign, KSign, Scarlet и SideInstaller, сертификаты, IPA-тулзы, джейлбрейк-утилиты и гайды по установке.</p>
+<p>Также ты можешь подписать свой IPA через KINST Signer или заглянуть в гайды: <a href="post/scarlet.html"><strong>Scarlet iOS</strong></a> и <a href="post/unable-to-verify.html"><strong>Unable to Verify App</strong></a> issues.</p>
 </div>
 <nav aria-label="Footer navigation" class="applejr-footer-links">
 <a aria-label="Home" href="index.htm">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M3 10.7 12 3l9 7.7v9.2c0 .6-.5 1.1-1.1 1.1h-5.4v-6.2h-5V21H4.1C3.5 21 3 20.5 3 19.9z"></path>
 </svg>
-<span>Home</span>
+<span>Главная</span>
 </a>
 <a aria-label="Terms of Use" href="terms/index.htm">
-<span>Terms</span>
+<span>Условия</span>
 </a>
 <a aria-label="Privacy Policy" href="privacy/index.htm">
-<span>Privacy</span>
+<span>Приватность</span>
 </a>
 <a aria-label="Disclaimer" href="disclaimer/index.htm">
-<span>Disclaimer</span>
+<span>Дисклеймер</span>
 </a>
 <a aria-label="YouTube" href="https://www.youtube.com/@applejr3645" rel="noopener noreferrer" target="_blank">
 <svg aria-hidden="true" viewbox="0 0 24 24">
@@ -1291,12 +1338,12 @@
 <span>Telegram</span>
 </a>
 </nav>
-<p>© 2026 AppleJr</p>
+<p>© 2026 KINST</p>
 </footer>
 <div class="bottom-nav-glass">
 <div class="nav-link active" data-target="page-library">
 <svg viewbox="0 0 24 24"><path d="M3 13h18v-2H3v2zM3 19h18v-2H3v2zM3 7h18V5H3v2z"></path></svg>
-<span>Installer</span>
+<span>Установщик</span>
 </div>
 <div class="nav-link" data-target="page-tools">
 <svg viewbox="0 0 24 24">
@@ -1311,14 +1358,14 @@
 <path d="M4.5 1.5h10.5l4.5 4.5v15a2.5 2.5 0 0 1-2.5 2.5H4.5A2.5 2.5 0 0 1 2 21V4a2.5 2.5 0 0 1 2.5-2.5z" fill="currentColor" mask="url(#ipa-cut)"></path>
 <path d="M15 1.5V6h4.5" fill="currentColor" mask="url(#ipa-cut)"></path>
 </svg>
-<span>Library</span>
+<span>Библиотека</span>
 </div>
 <div class="nav-link" data-target="page-signer">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M3 17.25V21h3.75L17.8 9.95l-3.75-3.75L3 17.25z"></path>
 <path d="M20.7 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"></path>
 </svg>
-<span>Signer</span>
+<span>Подпись</span>
 </div>
 <div class="nav-link" data-target="page-source">
 <svg viewbox="0 0 24 24">
@@ -1330,15 +1377,15 @@
              s1.8-4 4-4 4 1.8 4 4
              -1.8 4-4 4z"></path>
 </svg>
-<span>Jailbreak</span>
+<span>Джейлбрейк</span>
 </div>
 
-<a aria-label="Open AppleJr Sideloading" class="nav-link nav-sideload-link" href="https://sideload.applejr.net/">
+<a aria-label="Open KINST Sideloading" class="nav-link nav-sideload-link" href="https://sideload.applejr.net/">
 <svg aria-hidden="true" viewbox="0 0 24 24">
 <path d="M8 2h8a3 3 0 0 1 3 3v14a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3zm0 2a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1H8z"></path>
 <path d="M11 6h2v6h3l-4 4-4-4h3V6z"></path>
 </svg>
-<span>Sideloading</span>
+<span>Сайдлоадинг</span>
 </a>
 
 </div>
