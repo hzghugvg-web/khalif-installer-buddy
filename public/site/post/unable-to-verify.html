@@ -1,21 +1,21 @@
 ﻿<!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>How to Fix Unable to Verify App on iPhone & iPad | KINST</title>
-  <meta name="description" content="Troubleshoot the Unable to Verify App error on iPhone и iPad when using ESign, KSign, or Scarlet. Check certificate status, trust settings, DNS, и reinstall options.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="canonical" href="unable-to-verify.html">
-  <meta name="robots" content="index,follow">
-  <meta name="author" content="KINST">
-
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="KINST">
-  <meta property="og:title" content="How to Fix Unable to Verify App on iPhone & iPad">
-  <meta property="og:description" content="Troubleshoot Unable to Verify App errors with ESign, KSign, Scarlet, certificate status, trust settings, DNS, и reinstall options.">
-  <meta property="og:url" content="https://applejr.net/post/unable-to-verify.html">
+<meta charset="utf-8"/>
+<title>How to Fix Unable to Verify App on iPhone &amp; iPad | KINST</title>
+<meta content="Troubleshoot the Unable to Verify App error on iPhone и iPad when using ESign, KSign, or Scarlet. Check certificate status, trust settings, DNS, и reinstall options." name="description"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<link href="unable-to-verify.html" rel="canonical"/>
+<meta content="index,follow" name="robots"/>
+<meta content="KINST" name="author"/>
+<meta content="article" property="og:type"/>
+<meta content="KINST" property="og:site_name"/>
+<meta content="How to Fix Unable to Verify App on iPhone &amp; iPad" property="og:title"/>
+<meta content="Troubleshoot Unable to Verify App errors with ESign, KSign, Scarlet, certificate status, trust settings, DNS, и reinstall options." property="og:description"/>
+<meta content="https://applejr.net/post/unable-to-verify.html" property="og:url"/>
 <!-- Schema HowTo JSON-LD -->
-  <script type="application/ld+json">
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HowTo",
@@ -45,10 +45,10 @@
     ]
   }
   </script>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="KINST">
-<link rel="apple-touch-icon" href="assets/img-local/favicon-cc8fd9f1.ico">
+<meta content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover" name="viewport"/>
+<meta content="yes" name="apple-mobile-web-app-capable"/>
+<meta content="KINST" name="apple-mobile-web-app-title"/>
+<link href="assets/img-local/favicon-cc8fd9f1.ico" rel="apple-touch-icon"/>
 <style id="kinst-overrides">
   :root{ --kinst-ease: cubic-bezier(.22,1,.36,1); }
   html, body { -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; touch-action: pan-y; overscroll-behavior-y: contain; }
@@ -95,41 +95,24 @@
 </style>
 </head>
 <body>
-  <h1>How to Fix Unable to Verify App on iPhone & iPad</h1>
+<h1>How to Fix Unable to Verify App on iPhone &amp; iPad</h1>
+<p>The <b>Unable to Verify App</b> message usually means iOS cannot validate the certificate used to sign a sideloaded app such as ESign, KSign, or Scarlet.</p>
+<p>For current installers, certificates, и iOS sideloading tools, visit the <a href="../index.htm">KINST iOS IPA Установитьer</a>. If you use Scarlet, you can also check the <a href="scarlet.html">Scarlet iOS installation page</a>.</p>
+<h2>1. Check the Signing Certificate</h2>
+<p>First, check whether the certificate used to install the app is still working. If the certificate has expired or been revoked, the same installation may stop opening or show an Unable to Verify App message.</p>
+<p>In that situation, reinstalling the app with the same invalid certificate usually will not solve the problem. Use a currently valid certificate or signing method instead.</p>
+<h2>2. Check Developer Trust Settings</h2>
+<p>Open <b>Settings → General → VPN &amp; Device Management</b>. If a developer profile for the installed app appears there, make sure it is trusted before opening the app again.</p>
+<h2>3. Remove и Reinstall the App</h2>
+<p>If the certificate is currently valid but the app still cannot be verified, remove the affected app и install it again. This can refresh the installed profile и signing information associated with the app.</p>
+<h2>4. Check KINST DNS</h2>
+<p>If your installation method uses <b>KINST DNS</b>, confirm that the DNS profile is installed и active before reinstalling ESign, KSign, or Scarlet.</p>
+<p>DNS can be part of the installation method, but it cannot turn an already expired or revoked certificate into a valid certificate. If the signing certificate is no longer valid, use another currently working certificate.</p>
+<h2>5. Should You Erase Your iPhone?</h2>
+<p>Normally, <b>Erase All Content и Settings should not be your first solution</b>. A factory reset does not make an expired or revoked signing certificate valid again. Only consider resetting the device for broader iOS problems after backing up your data и after simpler troubleshooting has failed.</p>
+<h2>Video Tutorial</h2>
 
-  <p>The <b>Unable to Verify App</b> message usually means iOS cannot validate the certificate used to sign a sideloaded app such as ESign, KSign, or Scarlet.</p>
 
-  <p>For current installers, certificates, и iOS sideloading tools, visit the <a href="../index.htm">KINST iOS IPA Установитьer</a>. If you use Scarlet, you can also check the <a href="scarlet.html">Scarlet iOS installation page</a>.</p>
-
-  <h2>1. Check the Signing Certificate</h2>
-
-  <p>First, check whether the certificate used to install the app is still working. If the certificate has expired or been revoked, the same installation may stop opening or show an Unable to Verify App message.</p>
-
-  <p>In that situation, reinstalling the app with the same invalid certificate usually will not solve the problem. Use a currently valid certificate or signing method instead.</p>
-
-  <h2>2. Check Developer Trust Settings</h2>
-
-  <p>Open <b>Settings → General → VPN & Device Management</b>. If a developer profile for the installed app appears there, make sure it is trusted before opening the app again.</p>
-
-  <h2>3. Remove и Reinstall the App</h2>
-
-  <p>If the certificate is currently valid but the app still cannot be verified, remove the affected app и install it again. This can refresh the installed profile и signing information associated with the app.</p>
-
-  <h2>4. Check KINST DNS</h2>
-
-  <p>If your installation method uses <b>KINST DNS</b>, confirm that the DNS profile is installed и active before reinstalling ESign, KSign, or Scarlet.</p>
-
-  <p>DNS can be part of the installation method, but it cannot turn an already expired or revoked certificate into a valid certificate. If the signing certificate is no longer valid, use another currently working certificate.</p>
-
-  <h2>5. Should You Erase Your iPhone?</h2>
-
-  <p>Normally, <b>Erase All Content и Settings should not be your first solution</b>. A factory reset does not make an expired or revoked signing certificate valid again. Only consider resetting the device for broader iOS problems after backing up your data и after simpler troubleshooting has failed.</p>
-
-  <h2>Video Tutorial</h2>
-  <p>You can follow the full tutorial in my YouTube video below:</p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/rBJsePLg4Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
-  </iframe>
-
-  <p><i>This article is part of KINST Post.</i></p>
+<p><i>This article is part of KINST Post.</i></p>
 </body>
 </html>
