@@ -1,0 +1,2236 @@
+:root{
+  --primary:#69e56f;
+  --primary-2:#34d399;
+  --primary-3:#1abc9c;
+  --blue:#0a84ff;
+  --red:#ff453a;
+  --bg:#06080c;
+  --bg-deep:#020305;
+  --surface:rgba(19,22,28,.82);
+  --surface-2:rgba(255,255,255,.055);
+  --surface-3:rgba(255,255,255,.085);
+  --text:#f7f8fa;
+  --muted:#939aa6;
+  --muted-2:#6f7681;
+  --border:rgba(255,255,255,.085);
+  --border-strong:rgba(255,255,255,.14);
+  --shadow:0 16px 42px rgba(0,0,0,.34);
+  --radius-xl:24px;
+  --radius-lg:20px;
+  --radius-md:16px;
+}
+
+*{box-sizing:border-box}
+html{min-height:100%;background:#000;scroll-behavior:smooth}
+body{
+  margin:0;
+  min-height:100vh;
+  padding-bottom:112px;
+  color:var(--text);
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Segoe UI",sans-serif;
+  background:
+    radial-gradient(circle at 50% -8%,rgba(81,223,108,.11),transparent 30%),
+    radial-gradient(circle at 115% 30%,rgba(10,132,255,.075),transparent 26%),
+    linear-gradient(180deg,#05070a 0%,#090c11 48%,#05070a 100%);
+  overscroll-behavior-y:none;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  background-image:linear-gradient(rgba(255,255,255,.012) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.01) 1px,transparent 1px);
+  background-size:34px 34px;
+  mask-image:linear-gradient(to bottom,rgba(0,0,0,.4),transparent 72%);
+  z-index:-1;
+}
+a{color:inherit}
+img{display:block;max-width:100%}
+button,input,select{font:inherit}
+button{color:inherit}
+
+#main-content{width:100%}
+.page{display:none;padding:0 16px 18px;opacity:0;transform:translateY(8px)}
+.page.active{display:block;opacity:1;transform:translateY(0);animation:ajPageIn .28s ease both}
+.page-container{width:100%;max-width:700px;margin:0 auto}
+@keyframes ajPageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* Brand header: keep the production H1 text intact, redesign only visually. */
+#pageTitle{
+  position:relative;
+  z-index:20;
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+  padding:24px 18px 19px;
+  text-align:left;
+  color:#fff;
+  font-size:34px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:-1.5px;
+}
+#pageTitle::first-letter{letter-spacing:-2px}
+#pageTitle::before{
+  content:"";
+  position:absolute;
+  left:16px;
+  top:15px;
+  width:46px;
+  height:46px;
+  border-radius:18px;
+  background:radial-gradient(circle,rgba(105,229,111,.13),transparent 70%);
+  filter:blur(4px);
+  z-index:-1;
+}
+#pageTitle::after{
+  content:"iOS Apps • IPA Installer • Signer";
+  display:block;
+  margin-top:8px;
+  color:var(--muted);
+  font-size:12px;
+  font-weight:550;
+  line-height:1.2;
+  letter-spacing:.05px;
+}
+
+/* ======================== HERO SLIDER ======================== */
+.featured-container{
+  display:flex;
+  gap:13px;
+  overflow-x:auto;
+  padding:3px 1px 2px;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.featured-container::-webkit-scrollbar{display:none}
+.featured-card{
+  position:relative;
+  flex:0 0 96%;
+  max-width:96%;
+  height:286px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:24px;
+  scroll-snap-align:center;
+  background:
+    radial-gradient(circle at 82% 52%,rgba(67,220,95,.23),transparent 34%),
+    linear-gradient(135deg,#101814 0%,#0b100e 57%,#0a0d0c 100%);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 20px 52px rgba(0,0,0,.34);
+  cursor:pointer;
+  isolation:isolate;
+}
+.featured-card:nth-child(2){
+  background:
+    radial-gradient(circle at 82% 52%,rgba(117,88,255,.28),transparent 35%),
+    linear-gradient(135deg,#15131c 0%,#0d0c12 58%,#09090d 100%);
+}
+.featured-card:nth-child(3){
+  background:
+    radial-gradient(circle at 82% 52%,rgba(10,132,255,.28),transparent 35%),
+    linear-gradient(135deg,#0f1821 0%,#0b1118 58%,#080b0f 100%);
+}
+.featured-card::before{
+  content:"FEATURED";
+  position:absolute;
+  top:20px;
+  left:20px;
+  z-index:7;
+  padding:5px 9px;
+  border-radius:999px;
+  color:#9cf29d;
+  background:rgba(69,208,84,.12);
+  border:1px solid rgba(109,230,116,.17);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.72px;
+}
+.featured-card:nth-child(2)::before{content:"APPLEJR";color:#b9aaff;background:rgba(126,98,255,.12);border-color:rgba(147,123,255,.18)}
+.featured-card:nth-child(3)::before{content:"NEW";color:#9ac9ff;background:rgba(10,132,255,.12);border-color:rgba(69,157,255,.18)}
+.featured-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:1;
+  background:linear-gradient(90deg,rgba(4,6,6,.14),transparent 64%);
+  pointer-events:none;
+}
+.featured-visual{
+  position:absolute;
+  z-index:2;
+  top:38px;
+  right:16px;
+  width:43%;
+  height:210px;
+  display:grid;
+  place-items:center;
+  perspective:900px;
+}
+.featured-visual::before{
+  content:"";
+  position:absolute;
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  border:1px solid rgba(116,239,121,.18);
+  box-shadow:0 0 42px rgba(70,219,92,.16),inset 0 0 34px rgba(70,219,92,.07);
+}
+.featured-card:nth-child(2) .featured-visual::before{border-color:rgba(151,126,255,.20);box-shadow:0 0 42px rgba(119,89,255,.18),inset 0 0 34px rgba(119,89,255,.08)}
+.featured-card:nth-child(3) .featured-visual::before{border-color:rgba(90,169,255,.20);box-shadow:0 0 42px rgba(10,132,255,.18),inset 0 0 34px rgba(10,132,255,.08)}
+.featured-visual img{
+  position:relative;
+  z-index:3;
+  width:min(180px,94%);
+  height:148px;
+  object-fit:cover;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 20px 42px rgba(0,0,0,.50),inset 0 1px 0 rgba(255,255,255,.08);
+  transform:rotate(4deg) translateZ(0);
+  transition:transform .35s ease,filter .35s ease;
+}
+.featured-card:nth-child(2) .featured-visual img{transform:rotate(-4deg) translateZ(0)}
+.featured-card:nth-child(3) .featured-visual img{transform:rotate(3deg) translateZ(0)}
+.featured-orbit{
+  position:absolute;
+  z-index:4;
+  right:8%;
+  bottom:17px;
+  width:11px;
+  height:11px;
+  border-radius:50%;
+  background:#70e46f;
+  box-shadow:0 0 0 6px rgba(103,230,105,.07),0 0 24px rgba(103,230,105,.48);
+}
+.featured-card:nth-child(2) .featured-orbit{background:#8972ff;box-shadow:0 0 0 6px rgba(137,114,255,.07),0 0 24px rgba(137,114,255,.48)}
+.featured-card:nth-child(3) .featured-orbit{background:#4da3ff;box-shadow:0 0 0 6px rgba(77,163,255,.07),0 0 24px rgba(77,163,255,.48)}
+.featured-card:active .featured-visual img{transform:scale(.98) rotate(1deg)}
+.featured-info{
+  position:absolute;
+  left:20px;
+  top:66px;
+  bottom:auto;
+  right:46%;
+  z-index:6;
+  padding:0;
+  background:none;
+}
+.featured-info h3{
+  margin:0 0 9px;
+  color:#fff;
+  font-size:31px;
+  font-weight:900;
+  line-height:1.01;
+  letter-spacing:-1.05px;
+  text-shadow:none;
+}
+.featured-info p{
+  margin:0;
+  max-width:290px;
+  color:rgba(255,255,255,.63);
+  font-size:12px;
+  line-height:1.5;
+  text-shadow:none;
+}
+.featured-info::after{
+  content:"View Guide  →";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:18px;
+  padding:9px 12px;
+  border-radius:11px;
+  color:#071008;
+  background:linear-gradient(135deg,#7bf273,#56d863);
+  box-shadow:0 8px 18px rgba(74,207,84,.14);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.1px;
+}
+.featured-card:nth-child(2) .featured-info::after{content:"Explore Apps  →";color:#fff;background:linear-gradient(135deg,#765cf7,#9b72ff);box-shadow:0 8px 18px rgba(118,92,247,.16)}
+.featured-card:nth-child(3) .featured-info::after{content:"Install Now  →";color:#fff;background:linear-gradient(135deg,#0a84ff,#4aa4ff);box-shadow:0 8px 18px rgba(10,132,255,.16)}
+.hero-dots{display:flex;justify-content:center;gap:6px;padding:11px 0 19px}
+.hero-dot{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:#4d535c;transition:width .2s ease,background .2s ease}
+.hero-dot.active{width:19px;border-radius:999px;background:#69e56a}
+
+/* ======================== TRENDING HOME ======================== */
+#page-library>.page-container>.featured-simple.featured-pro{
+  margin:0 0 18px;
+  padding:0;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  overflow:visible;
+}
+#page-library>.page-container>.featured-simple .featured-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin:0 2px 12px;
+  font-size:18px;
+  font-weight:850;
+  letter-spacing:-.35px;
+}
+#page-library .featured-chip{
+  position:relative;
+  padding:5px 9px 5px 17px;
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(135deg,#ff9f0a,#ff375f);
+  border:1px solid rgba(255,255,255,.20);
+  box-shadow:0 6px 15px rgba(255,55,95,.18);
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.55px;
+}
+#page-library .featured-chip::before{
+  content:"";
+  position:absolute;
+  left:7px;
+  top:50%;
+  width:4px;
+  height:4px;
+  border-radius:50%;
+  transform:translateY(-50%);
+  background:#fff;
+  box-shadow:0 0 7px #fff;
+}
+#page-library>.page-container>.featured-simple .featured-grid{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:132px;
+  gap:10px;
+  overflow-x:auto;
+  padding:1px 1px 8px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+#page-library>.page-container>.featured-simple .featured-grid::-webkit-scrollbar{display:none}
+#page-library>.page-container>.featured-simple .featured-item{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  min-height:187px;
+  padding:12px;
+  overflow:visible;
+  border-radius:18px;
+  border:1px solid var(--border);
+  background:radial-gradient(circle at 18% 0%,rgba(255,255,255,.09),transparent 34%),linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.018));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 10px 27px rgba(0,0,0,.23);
+}
+#page-library>.page-container>.featured-simple .featured-item.pro{
+  background:radial-gradient(circle at 12% 0%,rgba(75,220,95,.12),transparent 36%),linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.018));
+  border-color:rgba(96,226,103,.13);
+}
+#page-library>.page-container>.featured-simple .featured-item::before{display:none}
+#page-library>.page-container>.featured-simple .featured-item img{
+  width:58px;
+  height:58px;
+  margin:0 auto 10px;
+  border-radius:15px;
+  object-fit:cover;
+  border:.5px solid rgba(255,255,255,.13);
+  box-shadow:0 8px 20px rgba(0,0,0,.28);
+}
+#page-library>.page-container>.featured-simple .f-info{text-align:center;min-width:0}
+#page-library>.page-container>.featured-simple .f-title{
+  overflow:hidden;
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+#page-library>.page-container>.featured-simple .f-desc{
+  min-height:28px;
+  margin-top:4px;
+  overflow:hidden;
+  color:rgba(255,255,255,.52);
+  font-size:9px;
+  line-height:1.35;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  white-space:normal;
+}
+#page-library>.page-container>.featured-simple .badge{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  margin-top:auto;
+  padding:8px 7px;
+  border-radius:11px;
+  color:#86f380;
+  background:rgba(74,205,85,.075);
+  border:1px solid rgba(97,225,104,.19);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+  font-size:10px;
+  font-weight:800;
+  text-decoration:none;
+}
+#page-library .featured-item[data-badge]::after{
+  content:attr(data-badge);
+  position:absolute;
+  top:8px;
+  right:8px;
+  z-index:6;
+  padding:3px 6px;
+  border-radius:999px;
+  color:#fff;
+  background:linear-gradient(135deg,#ff375f,#ff2d55);
+  border:1px solid rgba(255,255,255,.18);
+  font-size:6.5px;
+  font-weight:900;
+  letter-spacing:.35px;
+  box-shadow:0 5px 11px rgba(255,45,85,.19);
+}
+#page-library .featured-item[data-badge^="v"]::after{background:linear-gradient(135deg,#0a84ff,#5e5ce6)}
+
+.library-ad{min-height:0;margin:3px 0 13px!important}
+.library-ad:empty{display:none}
+
+/* ======================== HOME CATEGORY CHIPS ======================== */
+.sub-tabs{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 -16px 15px;
+  padding:2px 16px 5px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.sub-tabs::-webkit-scrollbar{display:none}
+.sub-tab{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  min-width:88px;
+  padding:10px 15px;
+  border:1px solid rgba(255,255,255,.10);
+  border-radius:999px;
+  color:rgba(255,255,255,.72);
+  background:rgba(255,255,255,.032);
+  font-size:10px;
+  font-weight:800;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .18s ease,border-color .18s ease,color .18s ease,transform .18s ease,box-shadow .18s ease;
+}
+.sub-tab svg{display:none!important}
+.sub-tab.active{
+  color:#071008;
+  background:linear-gradient(135deg,#79ef72,#55d765);
+  border-color:transparent;
+  box-shadow:0 8px 20px rgba(71,205,84,.17);
+}
+.sub-tab:active{transform:scale(.97)}
+.sub-has-new::after{display:none!important;content:none!important}
+.category-heading{
+  margin:8px 2px 12px;
+  color:#fff;
+  font-size:18px;
+  font-weight:850;
+  line-height:1.25;
+  letter-spacing:-.35px;
+}
+
+/* ======================== INSTALLER CARDS ======================== */
+.cat-list{padding-bottom:4px}
+.cat-list .card{
+  position:relative;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:12px;
+  min-height:86px;
+  margin:0 0 9px;
+  padding:12px;
+  overflow:visible;
+  border-radius:19px;
+  border:1px solid var(--border);
+  background:radial-gradient(circle at 0% 0%,rgba(255,255,255,.085),transparent 34%),linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.016));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 10px 28px rgba(0,0,0,.22);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.cat-list .card::before{
+  content:"";
+  position:absolute;
+  left:-35px;
+  top:-35px;
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  background:rgba(71,209,94,.06);
+  filter:blur(18px);
+  pointer-events:none;
+}
+.cat-list .card>.left{
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr);
+  align-items:center;
+  gap:11px;
+  min-width:0;
+}
+.cat-list .card .left>div{min-width:0}
+.cat-list .app-icon{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 9px 22px rgba(0,0,0,.27),0 0 20px rgba(78,225,102,.055);
+}
+.cat-list .card h3{
+  overflow:hidden;
+  margin:0;
+  color:#fff;
+  font-size:15px;
+  font-weight:850;
+  line-height:1.15;
+  letter-spacing:-.25px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.cat-list .card small,
+.cat-list .card .meta{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  min-width:0;
+  margin-top:6px;
+  color:rgba(255,255,255,.60);
+  font-size:10.5px;
+  line-height:1.25;
+}
+.cat-list .card .buttons{display:flex;align-items:center}
+.cat-list .badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  min-width:72px;
+  padding:9px 11px;
+  border:1px solid rgba(94,224,103,.20);
+  border-radius:12px;
+  color:#7cf077;
+  background:linear-gradient(135deg,rgba(70,210,84,.12),rgba(70,210,84,.045));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+  font-size:10px;
+  font-weight:850;
+  text-decoration:none;
+  transition:transform .16s ease,background .16s ease,box-shadow .16s ease;
+}
+.cat-list .badge::before{content:"↓";font-size:12px;line-height:1}
+.cat-list .badge:active{transform:scale(.95)}
+.cat-list .badge:hover{background:linear-gradient(135deg,rgba(75,225,92,.21),rgba(75,225,92,.07));box-shadow:0 8px 18px rgba(61,210,79,.08)}
+.cat-list .card.moving-new-card::after{
+  content:"✦";
+  position:absolute;
+  top:-7px;
+  right:12px;
+  z-index:8;
+  width:20px;
+  height:20px;
+  display:grid;
+  place-items:center;
+  border-radius:50%;
+  color:#9bf197;
+  background:rgba(65,204,82,.12);
+  border:1px solid rgba(110,232,116,.19);
+  box-shadow:0 5px 14px rgba(57,201,76,.11),inset 0 1px 0 rgba(255,255,255,.07);
+  font-size:10px;
+  line-height:1;
+  pointer-events:none;
+}
+
+/* Visual-only DOM transformation created by JS from the existing "DNS • Name" text. */
+.dns-meta-redesign{display:flex!important;align-items:center!important;gap:6px!important;flex-wrap:wrap!important;margin-top:6px!important}
+.dns-pill{
+  display:inline-flex;
+  align-items:center;
+  gap:4px;
+  flex:0 0 auto;
+  padding:3px 6px;
+  border-radius:999px;
+  color:#91f590;
+  background:linear-gradient(135deg,rgba(69,211,85,.14),rgba(69,211,85,.055));
+  border:1px solid rgba(105,229,111,.18);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.42px;
+}
+.dns-pill svg{width:10px;height:10px;fill:currentColor;filter:drop-shadow(0 0 4px rgba(104,240,111,.26))}
+.required-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  padding:3px 7px;
+  border-radius:999px;
+  color:#ffd38a;
+  background:linear-gradient(135deg,rgba(255,159,10,.13),rgba(255,159,10,.045));
+  border:1px solid rgba(255,181,57,.17);
+  font-size:7px;
+  font-weight:900;
+  letter-spacing:.38px;
+}
+.dns-name{
+  overflow:hidden;
+  min-width:0;
+  max-width:180px;
+  color:rgba(255,255,255,.56);
+  font-size:10.5px;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+}
+.dns-name::before{
+  content:"";
+  display:inline-block;
+  width:5px;
+  height:5px;
+  margin-right:5px;
+  vertical-align:1px;
+  border-radius:50%;
+  background:#66e774;
+  box-shadow:0 0 5px rgba(102,231,116,.7);
+}
+.anti-revoke-meta .dns-name{color:#7de87e}
+.download-only-card .badge{color:#83b9ff;background:rgba(10,132,255,.08);border-color:rgba(10,132,255,.19)}
+.download-only-card .badge::before{content:"↓"}
+
+/* ======================== IPA LIBRARY ======================== */
+#page-tools .page-container{padding-top:2px}
+#page-tools h2,
+#page-signer h2{
+  margin:8px 2px 7px;
+  color:#fff;
+  font-size:28px;
+  font-weight:900;
+  letter-spacing:-.8px;
+}
+.tools-note{
+  margin:0 0 14px;
+  color:rgba(255,255,255,.54);
+  font-size:11.5px;
+  line-height:1.55;
+}
+.text-btn{
+  all:unset;
+  display:inline;
+  margin:0 2px;
+  color:#87c7ff;
+  font-weight:700;
+  cursor:pointer;
+}
+.tools-search-glass{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  margin:13px 0 13px;
+  padding:13px 14px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,.045);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045);
+}
+.search-icon{font-size:14px;opacity:.58}
+.tools-search-glass input{
+  flex:1;
+  min-width:0;
+  border:0;
+  outline:0;
+  color:#fff;
+  background:transparent;
+  font-size:12px;
+}
+.tools-search-glass input::placeholder{color:#727a85}
+.tools-category{
+  display:flex;
+  gap:7px;
+  margin:0 -16px 14px;
+  padding:0 16px 4px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.tools-category::-webkit-scrollbar{display:none}
+.tool-cat{
+  width:auto;
+  flex:0 0 auto;
+  margin:0;
+  padding:8px 13px;
+  border:1px solid var(--border-strong);
+  border-radius:999px;
+  color:#d5d8dd;
+  background:rgba(255,255,255,.035);
+  font-size:10px;
+  font-weight:800;
+  white-space:nowrap;
+}
+.tool-cat.active{color:#071108;background:linear-gradient(135deg,#7af072,#55d96a);border-color:transparent}
+.tools-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tool-card{
+  min-width:0;
+  padding:14px 12px 12px;
+  text-align:center;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:linear-gradient(155deg,rgba(255,255,255,.065),rgba(255,255,255,.018));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 10px 24px rgba(0,0,0,.18);
+}
+.tool-card img{width:60px;height:60px;margin:0 auto 10px;border-radius:15px;object-fit:cover;box-shadow:0 8px 18px rgba(0,0,0,.25)}
+.tool-card h4{overflow:hidden;margin:0;text-align:center;color:#fff;font-size:12px;font-weight:850;white-space:nowrap;text-overflow:ellipsis}
+.tool-card small{display:block;overflow:hidden;margin-top:4px;text-align:center;color:rgba(255,255,255,.45);font-size:9px;white-space:nowrap;text-overflow:ellipsis}
+.tool-card a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:calc(100% - 4px);
+  margin:10px auto 0;
+  padding:8px 7px;
+  border:1px solid rgba(10,132,255,.17);
+  border-radius:11px;
+  color:#7ab9ff;
+  background:rgba(10,132,255,.07);
+  font-size:9.5px;
+  font-weight:850;
+  text-decoration:none;
+}
+#toolsLoadMore{
+  display:none;
+  width:auto;
+  margin:16px auto 0;
+  padding:10px 18px;
+  border:1px solid rgba(105,229,111,.20);
+  border-radius:999px;
+  color:#77ec74;
+  background:rgba(69,210,84,.08);
+  font-size:10px;
+  font-weight:850;
+}
+
+/* ======================== SIGNER ======================== */
+#page-signer .page-container{padding-top:3px}
+#page-signer form{
+  position:relative;
+  max-width:700px;
+  margin:0 auto;
+  padding:20px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:24px;
+  background:radial-gradient(circle at 8% 0%,rgba(105,229,111,.095),transparent 28%),linear-gradient(155deg,rgba(255,255,255,.065),rgba(255,255,255,.018));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 44px rgba(0,0,0,.28);
+}
+#page-signer form::before{
+  content:"APPLEJR SIGNER";
+  display:inline-block;
+  margin-bottom:8px;
+  color:#89ef86;
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:1.2px;
+}
+#page-signer form h2{margin:0 0 4px;font-size:28px}
+#page-signer form h2::after{
+  content:"Select an IPA file and choose your signing certificate.";
+  display:block;
+  max-width:440px;
+  margin-top:8px;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:500;
+  line-height:1.45;
+  letter-spacing:0;
+}
+.drop-zone{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:145px;
+  margin:20px 0 14px;
+  padding:22px 14px;
+  border:1px dashed rgba(105,229,111,.31);
+  border-radius:19px;
+  color:#fff;
+  background:rgba(68,207,83,.035);
+  cursor:pointer;
+  font-size:13px;
+  font-weight:800;
+  text-align:center;
+  transition:border-color .18s ease,background .18s ease,transform .18s ease;
+}
+.drop-zone::before{
+  content:"↑";
+  display:grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  margin-bottom:10px;
+  border-radius:14px;
+  color:#7aed76;
+  background:rgba(73,209,86,.10);
+  border:1px solid rgba(105,229,111,.13);
+  font-size:24px;
+}
+.drop-zone::after{
+  content:"Tap or drop your IPA here";
+  display:block;
+  margin-top:5px;
+  color:#777f8a;
+  font-size:9px;
+  font-weight:500;
+}
+.drop-zone.dragover{border-color:#7aed76;background:rgba(73,209,86,.075);transform:scale(.995)}
+.toggle-group{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:13px 0;
+  padding:13px 14px;
+  border:1px solid var(--border);
+  border-radius:16px;
+  background:rgba(255,255,255,.035);
+  color:#fff;
+  font-size:11px;
+  font-weight:750;
+}
+.switch{position:relative;display:inline-block;width:43px;height:25px;flex:0 0 auto}
+.switch input{display:none}
+.slider{position:absolute;inset:0;border-radius:999px;background:#343940;transition:.2s}
+.slider::before{content:"";position:absolute;left:3px;bottom:3px;width:19px;height:19px;border-radius:50%;background:#fff;box-shadow:0 2px 5px rgba(0,0,0,.25);transition:.2s}
+.switch input:checked+.slider{background:#47d15a}
+.switch input:checked+.slider::before{transform:translateX(18px)}
+#page-signer label:not(.switch){display:block;margin:13px 0 6px;color:#dfe3e7;font-size:10.5px;font-weight:800}
+#page-signer select,
+#page-signer input[type=file],
+#page-signer input[type=password]{
+  width:100%;
+  margin:0 0 10px;
+  padding:12px 13px;
+  border:1px solid var(--border-strong);
+  border-radius:13px;
+  outline:0;
+  color:#fff;
+  background:rgba(255,255,255,.045);
+  font-size:11px;
+}
+#page-signer select:focus,
+#page-signer input:focus{border-color:rgba(105,229,111,.38);box-shadow:0 0 0 3px rgba(105,229,111,.06)}
+#page-signer input[type=file]::file-selector-button{margin-right:9px;padding:7px 9px;border:0;border-radius:9px;color:#071008;background:#71e46c;font-weight:800}
+#page-signer .dns-required-btn{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  width:auto!important;
+  margin:4px 0 10px!important;
+  padding:6px 9px!important;
+  border:1px solid rgba(255,69,58,.18)!important;
+  border-radius:999px!important;
+  color:#ff8b84!important;
+  background:rgba(255,69,58,.065)!important;
+  box-shadow:none!important;
+  font-size:8px!important;
+  font-weight:850!important;
+  text-decoration:none!important;
+}
+#submitBtn{
+  width:100%;
+  margin-top:9px;
+  padding:12px 15px;
+  border:0;
+  border-radius:13px;
+  color:#071008;
+  background:linear-gradient(135deg,#7bf174,#54d566);
+  box-shadow:0 10px 22px rgba(67,205,81,.13);
+  font-size:11px;
+  font-weight:900;
+  cursor:pointer;
+}
+#loader{display:none;margin-top:12px;text-align:center;color:#9fa6b1;font-size:10px}
+#progressBar{display:none;width:100%;height:6px;margin-top:12px;overflow:hidden;border-radius:999px;background:#20242a}
+#progressBar div{width:0;height:100%;border-radius:999px;background:linear-gradient(90deg,#5dde66,#34d399);transition:width .2s}
+#resultBtns{display:none;margin-top:12px}
+#resultBtns .link-btn,
+.sign-new-btn{
+  display:block;
+  width:100%;
+  margin-top:8px;
+  padding:11px 12px;
+  border-radius:12px;
+  color:#fff;
+  background:#262b31;
+  border:1px solid var(--border);
+  font-size:10px;
+  font-weight:850;
+  text-align:center;
+  text-decoration:none;
+}
+#installLink{color:#83ef7d!important;background:rgba(70,209,82,.08)!important;border-color:rgba(98,226,105,.18)!important}
+#downloadLink{color:#8fc5ff!important;background:rgba(10,132,255,.07)!important;border-color:rgba(10,132,255,.16)!important}
+.sign-new-btn{color:#c3bfff!important;background:rgba(94,92,230,.08)!important;border-color:rgba(94,92,230,.18)!important}
+
+/* ======================== JAILBREAK ======================== */
+#page-source .page-container{padding-top:2px}
+#page-source .ipa-card{
+  margin:0;
+  padding:0;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+}
+#page-source .ipa-card>h3{
+  margin:8px 2px 8px;
+  color:#fff;
+  font-size:26px;
+  font-weight:900;
+  line-height:1.08;
+  letter-spacing:-.72px;
+}
+#page-source .repo-note{
+  display:flex;
+  align-items:flex-start;
+  gap:8px;
+  margin:7px 0;
+  padding:10px 11px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:14px;
+  color:rgba(255,255,255,.50);
+  background:rgba(255,255,255,.025);
+  font-size:9.5px;
+  line-height:1.45;
+}
+#page-source .repo-note-icon{flex:0 0 auto;font-size:12px}
+#page-source .featured-simple{
+  margin-top:18px;
+  padding:14px 12px;
+  border:1px solid rgba(255,255,255,.075);
+  border-radius:20px;
+  background:linear-gradient(155deg,rgba(255,255,255,.042),rgba(255,255,255,.012));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04),0 14px 34px rgba(0,0,0,.18);
+}
+#page-source .featured-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:0 2px 12px;
+  color:#fff;
+  font-size:16px;
+  font-weight:850;
+}
+#page-source .featured-chip{
+  padding:4px 7px;
+  border-radius:999px;
+  color:#8df08a;
+  background:rgba(70,210,84,.07);
+  border:1px solid rgba(105,229,111,.13);
+  font-size:6.8px;
+  font-weight:900;
+  letter-spacing:.3px;
+}
+#page-source .featured-grid{display:flex;flex-direction:column;gap:9px}
+#page-source .featured-item{
+  position:relative;
+  display:grid;
+  grid-template-columns:58px minmax(0,1fr) auto;
+  align-items:center;
+  gap:11px;
+  min-height:84px;
+  padding:12px;
+  overflow:visible;
+  border:1px solid var(--border);
+  border-radius:19px;
+  background:radial-gradient(circle at 0% 0%,rgba(255,255,255,.085),transparent 34%),linear-gradient(145deg,rgba(255,255,255,.06),rgba(255,255,255,.016));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 10px 28px rgba(0,0,0,.20);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+#page-source .featured-item.pro{border-color:rgba(103,230,109,.13)}
+#page-source .featured-item::before,#page-source .featured-item::after{display:none!important;content:none!important}
+#page-source .featured-item img{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  object-fit:cover;
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:0 9px 22px rgba(0,0,0,.27),0 0 20px rgba(78,225,102,.04);
+}
+#page-source .f-info{min-width:0}
+#page-source .f-title{overflow:hidden;color:#fff;font-size:14px;font-weight:850;line-height:1.15;letter-spacing:-.22px;white-space:nowrap;text-overflow:ellipsis}
+#page-source .f-desc{overflow:hidden;margin-top:5px;color:rgba(255,255,255,.57);font-size:10.5px;white-space:nowrap;text-overflow:ellipsis}
+#page-source .f-rating{display:none!important}
+#page-source .badge{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:5px;
+  min-width:72px;
+  padding:9px 11px;
+  border:1px solid rgba(94,224,103,.20);
+  border-radius:12px;
+  color:#7cf077;
+  background:linear-gradient(135deg,rgba(70,210,84,.12),rgba(70,210,84,.045));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05);
+  font-size:10px;
+  font-weight:850;
+  text-decoration:none;
+}
+#page-source .badge::before{content:"↓";font-size:12px;line-height:1}
+#page-source .badge:active{transform:scale(.95)}
+#page-source .featured-item:first-child{
+  background:radial-gradient(circle at 0% 0%,rgba(94,231,103,.085),transparent 36%),linear-gradient(145deg,rgba(82,213,93,.055),rgba(255,255,255,.012));
+  border-color:rgba(106,229,112,.15);
+}
+#page-source .featured-item:first-child .badge{
+  color:#ffcf7d;
+  background:rgba(255,159,10,.07);
+  border-color:rgba(255,181,57,.15);
+}
+
+/* ======================== MODAL ======================== */
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:99999;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:rgba(0,0,0,.68);
+  backdrop-filter:blur(8px);
+}
+.modal-content{
+  position:relative;
+  width:100%;
+  max-width:540px;
+  max-height:82vh;
+  overflow:auto;
+  padding:18px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:22px;
+  color:#e9ebee;
+  background:rgba(17,20,25,.96);
+  box-shadow:0 25px 70px rgba(0,0,0,.5);
+}
+.modal-close{
+  position:sticky;
+  top:0;
+  float:right;
+  width:31px;
+  height:31px;
+  margin:0;
+  padding:0;
+  border:1px solid var(--border-strong);
+  border-radius:50%;
+  color:#fff;
+  background:#25292f;
+  font-size:16px;
+  cursor:pointer;
+}
+#modalBody{font-size:12px;line-height:1.6}
+#modalBody img,#modalBody iframe{max-width:100%;border-radius:12px}
+#modalBody h1,#modalBody h2,#modalBody h3{color:#fff}
+
+/* ======================== FOOTER ======================== */
+.applejr-footer{
+  width:calc(100% - 32px);
+  max-width:700px;
+  margin:25px auto 22px;
+  padding:17px 14px 27px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,.065);
+  border-radius:20px;
+  background:rgba(255,255,255,.025);
+}
+.applejr-seo-intro{margin:0 0 14px;padding:0 4px 12px;border-bottom:1px solid rgba(255,255,255,.055);text-align:center}
+.applejr-seo-intro p{margin:5px 0;color:rgba(255,255,255,.38);font-size:9.5px;line-height:1.55}
+.applejr-seo-intro a{color:inherit;font-weight:700}
+.applejr-footer-links{display:flex;align-items:center;justify-content:center;gap:4px;flex-wrap:wrap}
+.applejr-footer-links a{display:inline-flex;align-items:center;gap:5px;min-height:31px;padding:6px 8px;border-radius:10px;color:rgba(255,255,255,.56);font-size:9.5px;font-weight:700;text-decoration:none}
+.applejr-footer-links svg{width:12px;height:12px;fill:currentColor}
+.applejr-footer>p{margin:9px 0 0;color:rgba(255,255,255,.25);font-size:8.5px}
+
+/* ======================== FLOATING BOTTOM NAV ======================== */
+/* Prototype-style floating navigation, adapted to AppleJr's five items. */
+.bottom-nav-glass{
+  position:fixed!important;
+  z-index:50!important;
+  left:50%!important;
+  bottom:calc(10px + env(safe-area-inset-bottom))!important;
+  width:calc(100% - 28px)!important;
+  max-width:520px!important;
+  min-height:68px!important;
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  align-items:center!important;
+  gap:5px!important;
+  padding:7px!important;
+  transform:translateX(-50%)!important;
+  border:1px solid rgba(255,255,255,.13)!important;
+  border-radius:22px!important;
+  background:linear-gradient(160deg,rgba(36,39,45,.92),rgba(14,16,20,.93))!important;
+  box-shadow:0 15px 40px rgba(0,0,0,.48)!important;
+  backdrop-filter:blur(28px) saturate(150%)!important;
+  -webkit-backdrop-filter:blur(28px) saturate(150%)!important;
+}
+
+.bottom-nav-glass .nav-link{
+  position:relative!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:3px!important;
+  min-width:0!important;
+  min-height:53px!important;
+  margin:0!important;
+  padding:4px 2px!important;
+  border:1px solid transparent!important;
+  border-radius:16px!important;
+  color:#b6bac2!important;
+  background:transparent!important;
+  text-decoration:none!important;
+  cursor:pointer!important;
+  transition:transform .18s ease,background .18s ease,color .18s ease,border-color .18s ease,box-shadow .18s ease!important;
+}
+
+.bottom-nav-glass .nav-link svg{
+  width:20px!important;
+  height:20px!important;
+  fill:currentColor!important;
+  opacity:1!important;
+  transition:transform .18s ease,filter .18s ease!important;
+}
+
+.bottom-nav-glass .nav-link span{
+  max-width:100%!important;
+  overflow:hidden!important;
+  color:currentColor!important;
+  font-size:9px!important;
+  font-weight:700!important;
+  line-height:1!important;
+  letter-spacing:-.1px!important;
+  white-space:nowrap!important;
+  text-overflow:ellipsis!important;
+}
+
+.bottom-nav-glass .nav-link:hover{
+  color:#eef1f4!important;
+  background:rgba(255,255,255,.045)!important;
+}
+
+.bottom-nav-glass .nav-link.active{
+  color:#d9ffd7!important;
+  background:linear-gradient(145deg,rgba(102,225,93,.28),rgba(55,169,63,.12))!important;
+  border-color:rgba(106,230,99,.31)!important;
+  box-shadow:inset 0 0 20px rgba(82,209,82,.11)!important;
+}
+
+.bottom-nav-glass .nav-link.active svg{
+  transform:translateY(-1px)!important;
+  filter:drop-shadow(0 0 8px rgba(102,225,93,.28))!important;
+}
+
+.bottom-nav-glass .nav-link:active{
+  transform:scale(.95)!important;
+}
+
+.bottom-nav-glass .nav-sideload-link svg{
+  fill:currentColor!important;
+  stroke:none!important;
+}
+
+@media(max-width:390px){
+  .bottom-nav-glass{
+    width:calc(100% - 20px)!important;
+    min-height:64px!important;
+    padding:6px!important;
+    gap:3px!important;
+    border-radius:20px!important;
+    bottom:8px!important;
+  }
+
+  .bottom-nav-glass .nav-link{
+    min-height:50px!important;
+    border-radius:14px!important;
+  }
+
+  .bottom-nav-glass .nav-link svg{
+    width:19px!important;
+    height:19px!important;
+  }
+
+  .bottom-nav-glass .nav-link span{
+    font-size:8px!important;
+  }
+}
+
+/* ======================== RESPONSIVE ======================== */
+@media(min-width:620px){
+  .page{padding-left:20px;padding-right:20px}
+  #pageTitle{padding-left:20px;padding-right:20px}
+  .featured-card{height:300px;flex-basis:91%;max-width:91%}
+  .featured-info h3{font-size:36px}
+  .featured-info p{font-size:13.5px}
+  #page-library>.page-container>.featured-simple .featured-grid{grid-auto-columns:150px}
+  .tools-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+@media(max-width:440px){
+  body{padding-bottom:102px}
+  .page{padding-left:12px;padding-right:12px}
+  #pageTitle{padding:21px 14px 17px;font-size:31px}
+  #pageTitle::after{font-size:11px}
+  .featured-card{height:252px;flex-basis:94%;max-width:94%;border-radius:21px}
+  .featured-card::before{top:14px;left:15px;font-size:7px}
+  .featured-info{left:15px;right:20%;bottom:19px}
+  .featured-info h3{font-size:26px}
+  .featured-info p{font-size:11px}
+  #page-library>.page-container>.featured-simple .featured-grid{grid-auto-columns:126px;gap:8px}
+  #page-library>.page-container>.featured-simple .featured-item{min-height:180px;padding:10px;border-radius:17px}
+  #page-library>.page-container>.featured-simple .featured-item img{width:54px;height:54px}
+  .sub-tabs{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}
+  .sub-tab{min-width:91px;padding:9px 12px;font-size:10px}
+  .cat-list .card{grid-template-columns:minmax(0,1fr) auto;gap:8px;min-height:80px;padding:10px;border-radius:17px}
+  .cat-list .card>.left{grid-template-columns:53px minmax(0,1fr);gap:9px}
+  .cat-list .app-icon{width:53px;height:53px;border-radius:14px}
+  .cat-list .card h3{font-size:14px}
+  .cat-list .badge{min-width:64px;padding:8px 8px;font-size:9px}
+  .dns-name{max-width:126px;font-size:9.5px}
+  .tools-category{margin-left:-12px;margin-right:-12px;padding-left:12px;padding-right:12px}
+  .tools-grid{gap:8px}
+  .tool-card{padding:10px;border-radius:16px}
+  #page-signer form{padding:17px;border-radius:21px}
+  #page-signer form h2{font-size:25px}
+  #page-source .ipa-card>h3{font-size:25px}
+  #page-source .featured-item{grid-template-columns:52px minmax(0,1fr) auto;gap:9px;min-height:75px;padding:10px;border-radius:17px}
+  #page-source .featured-item img{width:52px;height:52px;border-radius:14px}
+  #page-source .badge{min-width:59px;padding:7px 8px;font-size:8.5px}
+  .applejr-footer{width:calc(100% - 24px);margin-bottom:18px;padding-bottom:22px}
+}
+
+@media(max-width:360px){
+  .featured-card{height:238px}
+  .featured-info h3{font-size:24px}
+  #page-library>.page-container>.featured-simple .featured-grid{grid-auto-columns:118px}
+  .cat-list .card>.left{grid-template-columns:49px minmax(0,1fr)}
+  .cat-list .app-icon{width:49px;height:49px}
+  .cat-list .badge{min-width:58px;padding:7px 7px;font-size:8.5px}
+  .dns-name{max-width:105px}
+}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+
+/* APPLEJR V2 REVIEW PATCH */
+@media(max-width:540px){
+  .featured-card{height:258px;flex-basis:96%;max-width:96%;border-radius:22px}
+  .featured-card::before{top:16px;left:16px;font-size:6.5px}
+  .featured-info{left:16px;top:58px;right:45%}
+  .featured-info h3{font-size:27px;letter-spacing:-.85px}
+  .featured-info p{font-size:10.5px;line-height:1.43}
+  .featured-info::after{margin-top:14px;padding:8px 10px;border-radius:10px;font-size:8px}
+  .featured-visual{top:39px;right:8px;width:44%;height:183px}
+  .featured-visual::before{width:132px;height:132px}
+  .featured-visual img{width:min(142px,94%);height:120px;border-radius:17px}
+  .featured-orbit{bottom:12px;right:7%;width:9px;height:9px}
+  .sub-tab{min-width:83px;padding:9px 13px;font-size:9px}
+  #page-source .featured-simple{padding:12px 10px;border-radius:18px}
+  #page-source .featured-item{grid-template-columns:54px minmax(0,1fr) auto;gap:9px;min-height:79px;padding:10px;border-radius:17px}
+  #page-source .featured-item img{width:54px;height:54px;border-radius:15px}
+  #page-source .f-title{font-size:13px}
+  #page-source .f-desc{font-size:9.7px}
+  #page-source .badge{min-width:62px;padding:8px 9px;font-size:9px}
+}
+@media(max-width:390px){
+  .featured-card{height:245px}
+  .featured-info{right:43%}
+  .featured-info h3{font-size:24px}
+  .featured-visual{right:4px;width:43%}
+  .featured-visual img{width:126px;height:108px}
+}
+
+/* ============================================================
+   APPLEJR V2 REVIEW 3 — VISUAL PATCH ONLY
+   Prototype hero/header + cleaner category pills + NEW marker.
+   ============================================================ */
+
+/* Prototype-style compact header. H1 text/SEO remains AppleJr. */
+.topbar{
+  position:relative;
+  z-index:40;
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+  padding:21px 18px 17px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+}
+.topbar .brand{min-width:0}
+#pageTitle{
+  position:static;
+  width:auto;
+  max-width:none;
+  margin:0;
+  padding:0;
+  color:#fff;
+  text-align:left;
+  font-size:28px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:-1.15px;
+}
+#pageTitle span{color:#71e765}
+#pageTitle::before,#pageTitle::after{content:none!important;display:none!important}
+.topbar .brand p{
+  margin:6px 0 0;
+  color:#9298a5;
+  font-size:10.5px;
+  font-weight:550;
+  line-height:1.2;
+  white-space:nowrap;
+}
+.header-actions{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.icon-btn{
+  width:40px;
+  height:40px;
+  margin:0;
+  padding:0;
+  display:grid;
+  place-items:center;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:50%;
+  color:#fff;
+  background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.022));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055);
+  backdrop-filter:blur(18px);
+  -webkit-backdrop-filter:blur(18px);
+}
+.icon-btn svg{width:18px;height:18px;fill:currentColor}
+.icon-btn:active{transform:scale(.94)}
+.header-menu{
+  position:absolute;
+  top:68px;
+  right:18px;
+  z-index:60;
+  width:178px;
+  padding:7px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:17px;
+  background:rgba(16,19,24,.94);
+  box-shadow:0 18px 48px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.06);
+  backdrop-filter:blur(24px) saturate(140%);
+  -webkit-backdrop-filter:blur(24px) saturate(140%);
+}
+.header-menu[hidden]{display:none}
+.header-menu button,.header-menu a{
+  width:100%;
+  min-height:37px;
+  margin:0;
+  padding:0 11px;
+  display:flex;
+  align-items:center;
+  border:0;
+  border-radius:11px;
+  color:rgba(255,255,255,.78);
+  background:transparent;
+  text-align:left;
+  text-decoration:none;
+  font-size:11px;
+  font-weight:700;
+}
+.header-menu button:hover,.header-menu a:hover{color:#fff;background:rgba(255,255,255,.06)}
+
+/* FULL prototype hero feel, but keep production content/images/actions. */
+.hero-section{margin:0 0 18px}
+.featured-container.hero-slider{
+  display:flex;
+  gap:14px;
+  overflow-x:auto;
+  padding:0;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+.featured-container.hero-slider::-webkit-scrollbar{display:none}
+.featured-card.hero-card{
+  position:relative;
+  flex:0 0 100%;
+  max-width:100%;
+  min-width:100%;
+  height:285px;
+  overflow:hidden;
+  border-radius:23px;
+  border:1px solid rgba(255,255,255,.12);
+  scroll-snap-align:center;
+  box-shadow:0 14px 45px rgba(0,0,0,.38);
+  cursor:pointer;
+  isolation:isolate;
+}
+.featured-card.hero-green{
+  background:radial-gradient(circle at 80% 55%,rgba(57,215,90,.31),transparent 38%),linear-gradient(135deg,#121a17,#101513);
+}
+.featured-card.hero-purple{
+  background:radial-gradient(circle at 78% 50%,rgba(121,88,255,.38),transparent 40%),linear-gradient(135deg,#17151d,#111216);
+}
+.featured-card.hero-blue{
+  background:radial-gradient(circle at 78% 50%,rgba(54,142,255,.34),transparent 40%),linear-gradient(135deg,#111820,#111317);
+}
+.featured-card.hero-card::before,.featured-card.hero-card::after{content:none!important;display:none!important}
+.featured-card.hero-card .hero-content{
+  position:relative;
+  z-index:6;
+  width:59%;
+  padding:24px;
+  left:auto;
+  top:auto;
+  right:auto;
+  bottom:auto;
+  background:none;
+}
+.featured-card.hero-card .hero-badge{
+  display:inline-block;
+  margin-bottom:15px;
+  padding:6px 9px;
+  border-radius:999px;
+  color:#71e765;
+  background:rgba(67,209,82,.13);
+  border:1px solid rgba(112,230,102,.18);
+  font-size:9px;
+  font-weight:850;
+  letter-spacing:.65px;
+}
+.featured-card.hero-purple .hero-badge{color:#b9aaff;background:rgba(126,98,255,.12);border-color:rgba(147,123,255,.18)}
+.featured-card.hero-blue .hero-badge{color:#9ac9ff;background:rgba(10,132,255,.12);border-color:rgba(69,157,255,.18)}
+.featured-card.hero-card .hero-content h3{
+  margin:0 0 10px;
+  color:#fff;
+  font-size:32px;
+  font-weight:900;
+  line-height:1.02;
+  letter-spacing:-1.05px;
+  text-shadow:none;
+}
+.featured-card.hero-card .hero-content p{
+  margin:0;
+  max-width:285px;
+  color:#bdc2ca;
+  font-size:12px;
+  line-height:1.45;
+  text-shadow:none;
+}
+.featured-card.hero-card .hero-button{
+  display:inline-flex;
+  align-items:center;
+  gap:7px;
+  margin-top:19px;
+  padding:10px 14px;
+  border-radius:12px;
+  color:#07110a;
+  background:linear-gradient(135deg,#7af16a,#52c957);
+  box-shadow:0 8px 20px rgba(70,205,82,.14);
+  font-size:10px;
+  font-weight:850;
+}
+.featured-card.hero-card .hero-button-purple{color:#fff;background:linear-gradient(135deg,#765cf7,#9b72ff)}
+.featured-card.hero-card .hero-button-blue{color:#fff;background:linear-gradient(135deg,#0a84ff,#4aa4ff)}
+.featured-card.hero-card .featured-info::after{content:none!important;display:none!important}
+.featured-card.hero-card .hero-art{
+  position:absolute;
+  right:10px;
+  top:30px;
+  width:45%;
+  height:220px;
+  display:grid;
+  place-items:center;
+  perspective:900px;
+  z-index:3;
+}
+.featured-card.hero-card .hero-art::before{
+  content:"";
+  position:absolute;
+  width:175px;
+  height:175px;
+  right:5px;
+  top:25px;
+  border-radius:50%;
+  border:1px solid rgba(110,240,112,.25);
+  box-shadow:0 0 50px rgba(60,220,90,.18),inset 0 0 40px rgba(60,220,90,.11);
+}
+.featured-card.hero-purple .hero-art::before{border-color:rgba(151,126,255,.22);box-shadow:0 0 50px rgba(121,88,255,.20),inset 0 0 40px rgba(121,88,255,.10)}
+.featured-card.hero-blue .hero-art::before{border-color:rgba(90,169,255,.22);box-shadow:0 0 50px rgba(10,132,255,.20),inset 0 0 40px rgba(10,132,255,.10)}
+.featured-card.hero-card .hero-art img{
+  position:relative;
+  z-index:3;
+  width:min(155px,94%);
+  height:135px;
+  object-fit:cover;
+  border-radius:21px;
+  border:1px solid rgba(255,255,255,.15);
+  box-shadow:0 24px 45px rgba(0,0,0,.46);
+  transform:rotate(5deg);
+}
+.featured-card.hero-purple .hero-art img{transform:rotate(-5deg)}
+.featured-card.hero-blue .hero-art img{transform:rotate(4deg)}
+.hero-dots{display:flex;justify-content:center;gap:7px;padding:12px 0 0}
+.hero-dot{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:#555a62}
+.hero-dot.active{width:18px;border-radius:5px;background:#71e765}
+
+/* Prototype category pills: same edges/width as the cards below. */
+#page-library .sub-tabs{
+  width:100%;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin:0 0 14px;
+  padding:2px 0 13px;
+  overflow-x:auto;
+  border:0;
+  border-radius:0;
+  background:none;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+  scrollbar-width:none;
+}
+#page-library .sub-tabs::-webkit-scrollbar{display:none}
+#page-library .sub-tab{
+  position:relative;
+  flex:0 0 auto;
+  min-width:0;
+  padding:9px 17px;
+  border:1px solid rgba(255,255,255,.13);
+  border-radius:999px;
+  color:#ddd;
+  background:rgba(255,255,255,.035);
+  box-shadow:none;
+  font-size:12px;
+  font-weight:750;
+  line-height:1;
+  white-space:nowrap;
+}
+#page-library .sub-tab::before,#page-library .sub-tab::after{content:none!important;display:none!important}
+#page-library .sub-tab.active{
+  color:#081109;
+  border-color:transparent;
+  background:linear-gradient(135deg,#79ed67,#52c957);
+  box-shadow:0 7px 18px rgba(69,200,75,.22);
+  transform:none;
+}
+
+/* moving-new-card: simple, quiet NEW label — no sparkle / loud red sticker. */
+#page-library .cat-list .card.moving-new-card::after{
+  content:"NEW"!important;
+  display:inline-flex!important;
+  align-items:center;
+  justify-content:center;
+  position:absolute;
+  top:8px;
+  right:9px;
+  z-index:8;
+  padding:3px 6px;
+  border-radius:999px;
+  color:#baf7b5;
+  background:rgba(105,229,111,.09);
+  border:1px solid rgba(105,229,111,.15);
+  box-shadow:none;
+  font-size:6.5px;
+  font-weight:900;
+  letter-spacing:.45px;
+  line-height:1;
+  transform:none!important;
+}
+
+/* Jailbreak tab now uses the same centered card language as Home Trending. */
+#page-source .featured-simple{
+  margin:18px 0 0;
+  padding:0;
+  border:0;
+  background:transparent;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+#page-source .featured-grid{
+  display:grid;
+  grid-auto-flow:column;
+  grid-auto-columns:132px;
+  gap:10px;
+  overflow-x:auto;
+  padding:1px 1px 8px;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+#page-source .featured-grid::-webkit-scrollbar{display:none}
+#page-source .featured-item,
+#page-source .featured-item.pro{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  min-height:187px;
+  padding:12px;
+  overflow:visible;
+  border:1px solid rgba(255,255,255,.085);
+  border-radius:18px;
+  background:radial-gradient(circle at 18% 0%,rgba(255,255,255,.09),transparent 34%),linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.018));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 10px 27px rgba(0,0,0,.23);
+}
+#page-source .featured-item.pro{border-color:rgba(96,226,103,.13);background:radial-gradient(circle at 12% 0%,rgba(75,220,95,.12),transparent 36%),linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.018))}
+#page-source .featured-item img{
+  width:58px;
+  height:58px;
+  margin:0 auto 10px;
+  border-radius:15px;
+  object-fit:cover;
+  border:.5px solid rgba(255,255,255,.13);
+  box-shadow:0 8px 20px rgba(0,0,0,.28);
+}
+#page-source .f-info{text-align:center;min-width:0}
+#page-source .f-title{overflow:hidden;color:#fff;font-size:12px;font-weight:800;white-space:nowrap;text-overflow:ellipsis}
+#page-source .f-desc{min-height:28px;margin-top:4px;overflow:hidden;color:rgba(255,255,255,.52);font-size:9px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal}
+#page-source .badge{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  min-width:0;
+  margin-top:auto;
+  padding:8px 7px;
+  border-radius:11px;
+  color:#86f380;
+  background:rgba(74,205,85,.075);
+  border:1px solid rgba(97,225,104,.19);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+  font-size:9px;
+  font-weight:850;
+}
+#page-source .badge::before{content:none!important;display:none!important}
+#page-source .featured-item:first-child .badge{color:#86f380;background:rgba(74,205,85,.075);border-color:rgba(97,225,104,.19)}
+
+@media(max-width:540px){
+  .topbar{padding:18px 13px 15px}
+  #pageTitle{font-size:26px}
+  .topbar .brand p{font-size:9.5px}
+  .icon-btn{width:38px;height:38px}
+  .featured-card.hero-card{height:270px;border-radius:22px}
+  .featured-card.hero-card .hero-content{width:63%;padding:20px}
+  .featured-card.hero-card .hero-content h3{font-size:29px}
+  .featured-card.hero-card .hero-content p{font-size:10.8px}
+  .featured-card.hero-card .hero-art{right:-9px;transform:scale(.86)}
+  #page-library .sub-tabs{margin-left:0;margin-right:0;padding-left:0;padding-right:0}
+  #page-library .sub-tab{min-width:0;padding:9px 15px;font-size:11px}
+  #page-source .featured-grid{grid-auto-columns:126px;gap:8px}
+  #page-source .featured-item,#page-source .featured-item.pro{min-height:180px;padding:10px;border-radius:17px}
+  #page-source .featured-item img{width:54px;height:54px}
+}
+@media(max-width:390px){
+  #pageTitle{font-size:24px}
+  .topbar .brand p{max-width:190px;overflow:hidden;text-overflow:ellipsis}
+  .icon-btn{width:36px;height:36px}
+  .featured-card.hero-card{height:252px}
+  .featured-card.hero-card .hero-content{width:64%;padding:17px}
+  .featured-card.hero-card .hero-content h3{font-size:25px}
+  .featured-card.hero-card .hero-content p{font-size:10px}
+  .featured-card.hero-card .hero-button{margin-top:14px;padding:8px 10px;font-size:8.5px}
+  .featured-card.hero-card .hero-art{right:-16px;top:24px;transform:scale(.78)}
+  #page-library .sub-tab{padding:8px 13px;font-size:10px}
+  #page-source .featured-grid{grid-auto-columns:118px}
+}
+
+/* ============================================================
+   APPLEJR V2 REVIEW 4 — VISUAL ONLY
+   ============================================================ */
+.header-menu{display:none!important}
+
+
+/* =========================================================
+   APPLEJR V2 REVIEW 5 — VISUAL OVERRIDES ONLY
+   ========================================================= */
+
+/* Header: search only */
+.header-actions{display:flex;align-items:center;justify-content:flex-end;gap:0}
+#openSearch{width:40px;height:40px}
+
+/* 4th hero slide: Delta Executor */
+.hero-delta{
+  background:
+    radial-gradient(circle at 78% 48%,rgba(255,63,102,.30),transparent 39%),
+    radial-gradient(circle at 92% 15%,rgba(120,82,255,.18),transparent 28%),
+    linear-gradient(135deg,#1a1118,#111216 58%,#0d0e12);
+}
+.hero-delta .hero-badge{color:#ff9ab1;background:rgba(255,64,103,.11);border-color:rgba(255,116,145,.18)}
+.hero-delta .hero-content .hero-title span{color:#ff6f91}
+.hero-delta .hero-art::before{border-color:rgba(255,90,126,.23);box-shadow:0 0 54px rgba(255,58,104,.18),inset 0 0 40px rgba(129,79,255,.09)}
+.hero-delta .hero-delta-icon{transform:rotate(5deg);box-shadow:0 24px 45px rgba(0,0,0,.48),0 0 28px rgba(255,52,92,.16)}
+.hero-direct-install{display:inline-flex;align-items:center;text-decoration:none;background:linear-gradient(135deg,#ff5478,#d93664);color:#fff;box-shadow:0 9px 22px rgba(230,45,91,.22)}
+.hero-direct-install:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.hero-direct-install:active{transform:scale(.97)}
+
+/* Home tabs: true full-width 5-column row, centered and equal-sized. */
+#page-library .sub-tabs{
+  width:100%!important;
+  display:grid!important;
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+  align-items:stretch!important;
+  gap:7px!important;
+  margin:0 0 15px!important;
+  padding:0!important;
+  overflow:visible!important;
+}
+#page-library .sub-tab{
+  width:100%!important;
+  min-width:0!important;
+  min-height:44px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  padding:8px 4px!important;
+  margin:0!important;
+  text-align:center!important;
+  border-radius:13px!important;
+  font-size:clamp(8px,2.45vw,12px)!important;
+  font-weight:800!important;
+  line-height:1.05!important;
+  letter-spacing:-.15px!important;
+  white-space:nowrap!important;
+  color:#c9ced6!important;
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018))!important;
+  border:1px solid rgba(255,255,255,.085)!important;
+}
+#page-library .sub-tab.active{
+  color:#071109!important;
+  background:linear-gradient(135deg,#79ed67,#52c957)!important;
+  border-color:rgba(130,245,119,.44)!important;
+  box-shadow:0 8px 20px rgba(69,200,75,.19),inset 0 1px 0 rgba(255,255,255,.34)!important;
+}
+#page-library .sub-tab:hover{transform:translateY(-1px)!important;border-color:rgba(123,237,113,.18)!important}
+#page-library .sub-tab.active:hover{border-color:rgba(130,245,119,.44)!important}
+
+/* NEW marker: clearly different from the green DNS/active palette. */
+#page-library .cat-list .card.moving-new-card::after{
+  content:"NEW"!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  position:absolute!important;
+  top:8px!important;
+  right:9px!important;
+  z-index:8!important;
+  padding:3px 7px!important;
+  border-radius:999px!important;
+  color:#d9c9ff!important;
+  background:linear-gradient(135deg,rgba(128,79,255,.20),rgba(86,53,190,.14))!important;
+  border:1px solid rgba(164,128,255,.24)!important;
+  box-shadow:0 5px 15px rgba(100,60,220,.10)!important;
+  font-size:6.5px!important;
+  font-weight:900!important;
+  letter-spacing:.55px!important;
+  line-height:1!important;
+  transform:none!important;
+}
+
+/* Jailbreak — completely new app-store style. */
+#page-source{padding-top:0}
+#page-source .jailbreak-page{max-width:700px;margin:0 auto}
+.jailbreak-shell{
+  margin:0;
+  padding:18px 14px 22px;
+  border-radius:24px;
+  background:
+    radial-gradient(circle at 18% 0%,rgba(112,231,105,.075),transparent 30%),
+    linear-gradient(180deg,rgba(19,22,28,.92),rgba(8,10,14,.97));
+  border:1px solid rgba(255,255,255,.075);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.06),0 18px 45px rgba(0,0,0,.27);
+}
+.jailbreak-title-row{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+.jailbreak-kicker{display:block;margin-bottom:6px;color:#71e765;font-size:8px;font-weight:900;letter-spacing:1.25px}
+.jailbreak-title-row h2{margin:0;color:#fff;font-size:25px;font-weight:900;letter-spacing:-.8px}
+.jailbreak-title-row p{max-width:430px;margin:7px 0 0;color:rgba(255,255,255,.48);font-size:11px;line-height:1.45}
+.jailbreak-count{flex:0 0 auto;padding:5px 8px;border-radius:999px;color:#9298a5;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.07);font-size:7px;font-weight:850;letter-spacing:.6px}
+
+/* AppleJr DNS featured / required — intentionally different from normal cards. */
+.jb-required-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:64px minmax(0,1fr) auto;
+  align-items:center;
+  gap:13px;
+  margin-bottom:14px;
+  padding:14px;
+  overflow:hidden;
+  border-radius:19px;
+  background:
+    radial-gradient(circle at 6% 0%,rgba(78,220,103,.22),transparent 37%),
+    linear-gradient(135deg,rgba(33,89,52,.34),rgba(20,26,27,.78));
+  border:1px solid rgba(106,232,116,.24);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 12px 28px rgba(0,0,0,.23),0 0 30px rgba(54,203,78,.05);
+}
+.jb-required-card::after{content:"";position:absolute;right:-42px;top:-52px;width:150px;height:150px;border:1px solid rgba(111,236,120,.13);border-radius:50%;box-shadow:0 0 35px rgba(68,220,84,.06);pointer-events:none}
+.jb-required-icon-wrap{width:64px;height:64px;display:grid;place-items:center;border-radius:17px;background:rgba(0,0,0,.20);border:1px solid rgba(255,255,255,.08)}
+.jb-required-icon-wrap img{width:56px;height:56px;object-fit:cover;border-radius:14px}
+.jb-required-copy{min-width:0;position:relative;z-index:1}
+.jb-required-label{display:inline-flex;margin-bottom:5px;padding:3px 6px;border-radius:999px;color:#ffd59f;background:rgba(255,160,48,.11);border:1px solid rgba(255,174,64,.20);font-size:6.5px;font-weight:900;letter-spacing:.65px}
+.jb-required-copy h3{margin:0;color:#fff;font-size:16px;font-weight:900;letter-spacing:-.3px}
+.jb-required-copy p{margin:4px 0 0;color:rgba(255,255,255,.56);font-size:9.5px;line-height:1.35}
+.jb-required-btn{position:relative;z-index:2;display:inline-flex;align-items:center;justify-content:center;min-width:72px;padding:9px 12px;border-radius:12px;color:#09120b;background:linear-gradient(135deg,#7af16a,#52c957);font-size:10px;font-weight:900;text-decoration:none;box-shadow:0 7px 18px rgba(72,204,80,.16);transition:transform .17s ease,filter .17s ease,box-shadow .17s ease}
+.jb-required-btn:hover{transform:translateY(-2px) scale(1.03);filter:brightness(1.06);box-shadow:0 11px 24px rgba(72,204,80,.25)}
+.jb-required-btn:active{transform:scale(.95)}
+
+.jailbreak-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.jailbreak-tool-card{
+  position:relative;
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:190px;
+  padding:14px 11px 11px;
+  overflow:hidden;
+  text-align:center;
+  border-radius:18px;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(255,255,255,.075),transparent 33%),
+    linear-gradient(160deg,rgba(255,255,255,.065),rgba(255,255,255,.018));
+  border:1px solid rgba(255,255,255,.075);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 9px 24px rgba(0,0,0,.20);
+  transition:transform .18s ease,border-color .18s ease,background .18s ease,box-shadow .18s ease;
+}
+.jailbreak-tool-card:hover{transform:translateY(-3px);border-color:rgba(113,231,101,.17);background:radial-gradient(circle at 50% 0%,rgba(112,231,105,.09),transparent 35%),linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.025));box-shadow:inset 0 1px 0 rgba(255,255,255,.07),0 14px 30px rgba(0,0,0,.27)}
+.jailbreak-tool-card img{width:64px;height:64px;margin:0 auto 10px;object-fit:cover;border-radius:16px;border:.5px solid rgba(255,255,255,.13);box-shadow:0 8px 20px rgba(0,0,0,.27);transition:transform .18s ease,filter .18s ease}
+.jailbreak-tool-card:hover img{transform:scale(1.045);filter:brightness(1.06)}
+.jailbreak-tool-card .jailbreak-tool-title{width:100%;overflow:hidden;margin:0;color:#fff;font-size:12.5px;font-weight:850;letter-spacing:-.15px;white-space:nowrap;text-overflow:ellipsis}
+.jailbreak-tool-card p{min-height:27px;margin:5px 0 11px;color:rgba(255,255,255,.46);font-size:9px;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.jailbreak-tool-card a{display:flex;align-items:center;justify-content:center;width:100%;margin-top:auto;padding:9px 8px;border-radius:11px;color:#7cf077;background:linear-gradient(135deg,rgba(73,213,88,.10),rgba(73,213,88,.04));border:1px solid rgba(98,225,105,.17);font-size:9.5px;font-weight:900;text-decoration:none;transition:transform .16s ease,background .16s ease,border-color .16s ease,box-shadow .16s ease,color .16s ease}
+.jailbreak-tool-card a:hover{transform:translateY(-1px);color:#09120b;background:linear-gradient(135deg,#79ed67,#52c957);border-color:rgba(121,237,103,.44);box-shadow:0 8px 18px rgba(69,200,75,.17)}
+.jailbreak-tool-card a:active{transform:scale(.95)}
+
+@media(max-width:540px){
+  #page-library .sub-tabs{gap:5px!important}
+  #page-library .sub-tab{min-height:42px!important;padding:7px 2px!important;font-size:clamp(7.4px,2.35vw,10.5px)!important}
+  .jailbreak-shell{padding:15px 11px 19px;border-radius:21px}
+  .jailbreak-title-row h2{font-size:23px}
+  .jailbreak-title-row p{font-size:9.7px}
+  .jb-required-card{grid-template-columns:58px minmax(0,1fr) auto;gap:10px;padding:11px;border-radius:17px}
+  .jb-required-icon-wrap{width:58px;height:58px;border-radius:15px}
+  .jb-required-icon-wrap img{width:51px;height:51px;border-radius:13px}
+  .jb-required-copy h3{font-size:14px}
+  .jb-required-copy p{font-size:8.5px}
+  .jb-required-btn{min-width:62px;padding:8px 9px;font-size:9px}
+  .jailbreak-grid{gap:8px}
+  .jailbreak-tool-card{min-height:182px;padding:12px 9px 9px;border-radius:17px}
+  .jailbreak-tool-card img{width:58px;height:58px;border-radius:15px}
+  .jailbreak-tool-card .jailbreak-tool-title{font-size:11.5px}
+  .jailbreak-tool-card p{font-size:8.5px}
+  .jailbreak-tool-card a{padding:8px 7px;font-size:9px}
+}
+
+@media(max-width:365px){
+  #page-library .sub-tabs{gap:4px!important}
+  #page-library .sub-tab{font-size:7.2px!important;letter-spacing:-.28px!important}
+  .jailbreak-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+  .jailbreak-tool-card{min-height:176px;padding-left:7px;padding-right:7px}
+  .jailbreak-tool-card img{width:54px;height:54px}
+  .jailbreak-tool-card .jailbreak-tool-title{font-size:10.5px}
+}
+
+/* =========================================================
+   APPLEJR V2 REVIEW 6 — targeted visual corrections only
+   ========================================================= */
+
+/* Hero slider: keep the exact prototype card structure and prevent
+   legacy .featured-card dimensions from breaking the 4-slide rail. */
+#page-library .hero-section{
+  width:100%;
+  margin:0 0 18px;
+  overflow:hidden;
+}
+#page-library #featuredSlider.hero-slider{
+  width:100%;
+  display:flex!important;
+  align-items:stretch;
+  gap:14px!important;
+  margin:0!important;
+  padding:0!important;
+  overflow-x:auto!important;
+  overflow-y:hidden!important;
+  scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;
+  scrollbar-width:none;
+  -webkit-overflow-scrolling:touch;
+}
+#page-library #featuredSlider.hero-slider::-webkit-scrollbar{display:none}
+#page-library #featuredSlider .featured-card.hero-card{
+  box-sizing:border-box!important;
+  flex:0 0 100%!important;
+  width:100%!important;
+  min-width:100%!important;
+  max-width:100%!important;
+  height:285px!important;
+  margin:0!important;
+  scroll-snap-align:start!important;
+  scroll-snap-stop:always;
+  transform:none;
+}
+#page-library #featuredSlider .featured-card.hero-card:hover{
+  transform:none!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-content .hero-title{
+  margin:0 0 10px!important;
+  color:#fff!important;
+  font-size:34px!important;
+  font-weight:900!important;
+  line-height:1.02!important;
+  letter-spacing:-1.2px!important;
+  text-align:left!important;
+  text-shadow:none!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-content .hero-title span{
+  color:#71e765;
+}
+#page-library #featuredSlider .hero-purple .hero-content .hero-title span{color:#9b86ff!important}
+#page-library #featuredSlider .hero-blue .hero-content .hero-title span{color:#5baaff!important}
+#page-library #featuredSlider .hero-delta .hero-content .hero-title span{color:#ff6f91!important}
+#page-library #featuredSlider .featured-card.hero-card .hero-art .hero-icon{
+  position:absolute!important;
+  width:86px!important;
+  height:86px!important;
+  object-fit:cover!important;
+  border-radius:20px!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-art .hero-esign{
+  right:55px!important; top:5px!important; transform:rotate(7deg)!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-art .hero-scarlet{
+  right:118px!important; top:92px!important; transform:rotate(-13deg)!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-art .hero-ksign{
+  right:20px!important; top:110px!important; transform:rotate(12deg)!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-art .hero-single{
+  position:absolute!important;
+  width:150px!important;
+  height:150px!important;
+  right:17px!important;
+  top:32px!important;
+  object-fit:cover!important;
+  border-radius:34px!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-art .hero-delta-icon{
+  transform:rotate(5deg)!important;
+}
+
+/* NEW: small inline pill beside the app name, never a corner sticker. */
+#page-library .cat-list .card.moving-new-card::after{
+  content:none!important;
+  display:none!important;
+}
+#page-library .cat-list .card.moving-new-card h3{
+  display:inline-flex!important;
+  align-items:center!important;
+  gap:6px!important;
+  max-width:100%;
+}
+#page-library .cat-list .card.moving-new-card h3::after{
+  content:"NEW";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+  padding:2px 5px;
+  border-radius:999px;
+  color:#e2d8ff;
+  background:linear-gradient(135deg,rgba(127,83,255,.22),rgba(90,57,199,.15));
+  border:1px solid rgba(165,135,255,.24);
+  box-shadow:none;
+  font-size:6.5px;
+  font-weight:900;
+  line-height:1;
+  letter-spacing:.5px;
+  vertical-align:middle;
+}
+
+/* Jailbreak notes restored above AppleJr DNS, visually consistent with V2. */
+#page-source .jailbreak-notes{
+  display:grid;
+  gap:8px;
+  margin:0 0 13px;
+}
+#page-source .jailbreak-notes .repo-note{
+  display:flex;
+  align-items:flex-start;
+  gap:9px;
+  margin:0;
+  padding:10px 11px;
+  border-radius:14px;
+  color:rgba(255,255,255,.67);
+  background:linear-gradient(145deg,rgba(255,255,255,.055),rgba(255,255,255,.018));
+  border:1px solid rgba(255,255,255,.07);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045);
+  font-size:9.5px;
+  line-height:1.45;
+}
+#page-source .jailbreak-notes .repo-note-icon{
+  flex:0 0 auto;
+  margin-top:1px;
+  font-size:12px;
+  line-height:1;
+}
+#page-source .jailbreak-notes b{color:#fff;font-weight:850}
+
+@media(max-width:540px){
+  #page-library #featuredSlider .featured-card.hero-card{height:270px!important}
+  #page-library #featuredSlider .featured-card.hero-card .hero-content{width:63%!important;padding:20px!important}
+  #page-library #featuredSlider .featured-card.hero-card .hero-content .hero-title{font-size:29px!important}
+  #page-library #featuredSlider .featured-card.hero-card .hero-art{right:-9px!important;transform:scale(.86)!important}
+  #page-source .jailbreak-notes .repo-note{font-size:9px;padding:9px 10px}
+}
+@media(max-width:370px){
+  #page-library #featuredSlider .featured-card.hero-card{height:252px!important}
+  #page-library #featuredSlider .featured-card.hero-card .hero-content{width:64%!important;padding:17px!important}
+  #page-library #featuredSlider .featured-card.hero-card .hero-content .hero-title{font-size:25px!important}
+  #page-library #featuredSlider .featured-card.hero-card .hero-art{right:-16px!important;top:24px!important;transform:scale(.78)!important}
+}
+
+/* =========================================================
+   APPLEJR V2 REVIEW 7
+   - Prototype-style hero buttons
+   - Cleaner single Jailbreak note
+   ========================================================= */
+
+/* Exact compact CTA treatment from the approved prototype.
+   `width:auto` is important because the production stylesheet
+   has a global button rule that otherwise stretches buttons. */
+#page-library #featuredSlider .featured-card.hero-card .hero-button{
+  display:inline-flex!important;
+  width:auto!important;
+  min-width:0!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:7px!important;
+  margin:19px 0 0!important;
+  padding:11px 16px!important;
+  border:0!important;
+  border-radius:12px!important;
+  color:#07110a!important;
+  background:linear-gradient(135deg,#7af16a,#52c957)!important;
+  box-shadow:0 8px 20px rgba(70,205,82,.14)!important;
+  font-size:10px!important;
+  font-weight:800!important;
+  line-height:1!important;
+  text-decoration:none!important;
+  cursor:pointer!important;
+  transition:transform .18s ease,filter .18s ease,box-shadow .18s ease!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-button span{
+  display:inline-block!important;
+  margin-left:1px!important;
+  transition:transform .18s ease!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-button:hover{
+  transform:translateY(-2px)!important;
+  filter:brightness(1.06)!important;
+  box-shadow:0 11px 24px rgba(70,205,82,.20)!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-button:hover span{
+  transform:translateX(2px)!important;
+}
+#page-library #featuredSlider .featured-card.hero-card .hero-button:active{
+  transform:scale(.96)!important;
+}
+
+/* Keep per-slide identity while preserving the same prototype shape. */
+#page-library #featuredSlider .hero-purple .hero-button{
+  color:#fff!important;
+  background:linear-gradient(135deg,#765cf7,#9b72ff)!important;
+  box-shadow:0 8px 20px rgba(118,92,247,.18)!important;
+}
+#page-library #featuredSlider .hero-blue .hero-button{
+  color:#fff!important;
+  background:linear-gradient(135deg,#0a84ff,#4aa4ff)!important;
+  box-shadow:0 8px 20px rgba(10,132,255,.18)!important;
+}
+#page-library #featuredSlider .hero-delta .hero-button{
+  color:#fff!important;
+  background:linear-gradient(135deg,#ff4f78,#ff7a59)!important;
+  box-shadow:0 8px 20px rgba(255,79,120,.19)!important;
+}
+
+/* More controlled hero track. The clone used by JS inherits this sizing. */
+#page-library #featuredSlider.hero-slider{
+  scroll-snap-type:x mandatory!important;
+  overscroll-behavior-x:contain;
+}
+#page-library #featuredSlider .featured-card.hero-card{
+  scroll-snap-align:start!important;
+  scroll-snap-stop:always!important;
+}
+#page-library #featuredSlider .hero-loop-clone{
+  pointer-events:none;
+}
+#page-library #featuredSlider .hero-loop-clone a,
+#page-library #featuredSlider .hero-loop-clone button{
+  pointer-events:none!important;
+}
+
+/* One polished note instead of two stacked notices. */
+#page-source .jailbreak-notes{display:none!important}
+#page-source .jailbreak-note-card{
+  position:relative;
+  display:grid;
+  grid-template-columns:34px minmax(0,1fr);
+  align-items:start;
+  gap:11px;
+  margin:0 0 14px;
+  padding:12px 13px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.085);
+  border-radius:17px;
+  background:
+    radial-gradient(circle at 0 0,rgba(10,132,255,.12),transparent 38%),
+    linear-gradient(145deg,rgba(255,255,255,.065),rgba(255,255,255,.02));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.055),0 10px 28px rgba(0,0,0,.20);
+}
+#page-source .jailbreak-note-card::after{
+  content:"";
+  position:absolute;
+  right:-42px;
+  top:-52px;
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  background:rgba(113,231,101,.055);
+  filter:blur(8px);
+  pointer-events:none;
+}
+#page-source .jailbreak-note-icon{
+  position:relative;
+  z-index:1;
+  width:34px;
+  height:34px;
+  display:grid;
+  place-items:center;
+  border-radius:11px;
+  color:#9ac8ff;
+  background:rgba(10,132,255,.12);
+  border:1px solid rgba(90,164,255,.17);
+  font-size:14px;
+  font-weight:900;
+  font-family:ui-rounded,-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;
+}
+#page-source .jailbreak-note-copy{
+  position:relative;
+  z-index:1;
+  min-width:0;
+}
+#page-source .jailbreak-note-copy>strong{
+  display:block;
+  margin:1px 0 4px;
+  color:#fff;
+  font-size:10px;
+  font-weight:900;
+  letter-spacing:.1px;
+}
+#page-source .jailbreak-note-copy p{
+  margin:0;
+  color:rgba(255,255,255,.61);
+  font-size:9.4px;
+  line-height:1.5;
+}
+#page-source .jailbreak-note-copy b{
+  color:#fff;
+  font-weight:850;
+}
+
+@media(max-width:540px){
+  #page-library #featuredSlider .featured-card.hero-card .hero-button{
+    margin-top:17px!important;
+    padding:10px 14px!important;
+    font-size:9.5px!important;
+  }
+  #page-source .jailbreak-note-card{
+    grid-template-columns:31px minmax(0,1fr);
+    gap:9px;
+    padding:11px;
+    border-radius:15px;
+  }
+  #page-source .jailbreak-note-icon{
+    width:31px;
+    height:31px;
+    border-radius:10px;
+    font-size:13px;
+  }
+  #page-source .jailbreak-note-copy>strong{font-size:9.5px}
+  #page-source .jailbreak-note-copy p{font-size:8.8px;line-height:1.48}
+}
+
+/* APPLEJR_SIGNED_CERT_STATUS_START */
+
+.dot-signed-mini {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  vertical-align: middle;
+
+  background: #0a84ff;
+
+  box-shadow:
+    0 0 4px rgba(10,132,255,.95),
+    0 0 9px rgba(10,132,255,.65),
+    0 0 16px rgba(64,200,255,.28);
+
+  animation: signedPulse 1.9s ease-in-out infinite;
+}
+
+@keyframes signedPulse {
+  0%,
+  100% {
+    opacity: .72;
+    transform: scale(1);
+
+    box-shadow:
+      0 0 3px rgba(10,132,255,.75),
+      0 0 7px rgba(10,132,255,.45);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.28);
+
+    box-shadow:
+      0 0 6px #0a84ff,
+      0 0 13px rgba(10,132,255,.85),
+      0 0 22px rgba(64,200,255,.42);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot-signed-mini {
+    animation: none;
+  }
+}
+
+/* APPLEJR_SIGNED_CERT_STATUS_END */
+

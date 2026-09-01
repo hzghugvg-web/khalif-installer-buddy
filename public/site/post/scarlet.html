@@ -1,0 +1,1357 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+
+<title>Scarlet iOS Direct Install IPA with New Certificate</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Scarlet is a modern iOS app installer that lets you sideload and install IPA files on iPhone and iPad without jailbreak. Supports iOS 14-26, certificates, revoke-aware installs and advanced signing options.">
+<link rel="canonical" href="scarlet.html">
+
+  <meta name="robots" content="index,follow">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="language" content="en">
+
+  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Scarlet iOS App Installer - Install Any IPA on iPhone & iPad">
+  <meta property="og:description" content="Install IPA files, emulators and tools on iOS without jailbreak. Scarlet gives you a modern, revoke-aware sideloading experience with certificate and profile management.">
+  <meta property="og:url" content="https://applejr.net/post/scarlet.html">
+  <meta property="og:site_name" content="AppleJr">
+  <!-- Ganti dengan URL thumbnail kamu -->
+  <meta property="og:image" content="https://applejr.net/assets/img-local/QQ563esm-8dd8c500.png">
+  <meta property="og:image:width" content="320">
+  <meta property="og:image:height" content="320">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Scarlet iOS App Installer - Install Any IPA on iPhone & iPad">
+  <meta name="twitter:description" content="Advanced IPA installer for iPhone & iPad. No jailbreak required, iOS 14-26 support, certificate manager and revoke-aware installs.">
+  <meta name="twitter:image" content="https://applejr.net/assets/img-local/QQ563esm-8dd8c500.png">
+
+  <!-- Favicon -->
+<link rel="icon" type="image/webp" href="../assets/img-local/4XwsL7um-9368b416.webp">
+<link rel="apple-touch-icon" href="../assets/img-local/4XwsL7um-9368b416.png">
+
+
+  <!-- Structured Data (SoftwareApplication) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Scarlet iOS App Installer",
+    "operatingSystem": "iOS",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Scarlet is an advanced iOS app installer for sideloading IPA files on iPhone and iPad without jailbreak. Supports modern iOS versions, certificate management and revoke-aware installs.",
+    "url": "https://applejr.net/post/scarlet.html",
+    "image": "https://applejr.net/assets/img-local/QQ563esm-8dd8c500.png",
+    "softwareVersion": "1.0",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="../css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <style>
+    :root {
+      --bg: #05040a;
+      --bg-alt: #0b0913;
+      --primary: #ff3344;
+      --primary-soft: rgba(255, 51, 68, 0.14);
+      --accent: #ff9a76;
+      --text: #f9fafb;
+      --muted: #9ca3af;
+      --border: rgba(148, 163, 184, 0.2);
+      --radius-xl: 20px;
+      --radius-2xl: 26px;
+      --shadow-soft: 0 24px 60px rgba(0,0,0,0.55);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    sans-serif;
+  background: radial-gradient(circle at top, #16061a 0, #05040a 55%);
+  color: var(--text);
+  scroll-behavior: smooth;
+}
+
+
+    body {
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 64px;
+    }
+
+    /* Header / Nav */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(18px);
+      background: linear-gradient(
+        to bottom,
+        rgba(5,4,10,0.96),
+        rgba(5,4,10,0.70),
+        transparent
+      );
+    }
+
+    .header-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 14px 16px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: conic-gradient(from 220deg,
+        #ff3344,
+        #ff9a76,
+        #facc15,
+        #ff3344
+      );
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 0 1px rgba(248, 250, 252, 0.12),
+                  0 16px 30px rgba(0, 0, 0, 0.9);
+      overflow: hidden;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .logo-text-main {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .logo-text-sub {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--muted);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 13px;
+    }
+
+    .nav a {
+      color: var(--muted);
+      font-weight: 500;
+      padding: 6px 0;
+      position: relative;
+      transition: color 0.18s ease;
+    }
+
+    .nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      transform-origin: center;
+      transform: scaleX(0);
+      opacity: 0;
+      transition: all 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: #e5e7eb;
+    }
+
+    .nav a:hover::after {
+      transform: scaleX(1);
+      opacity: 1;
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #0b0913;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 16px;
+      box-shadow: 0 12px 30px rgba(248, 113, 113, 0.35);
+      border: none;
+      cursor: pointer;
+      outline: none;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+      white-space: nowrap;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 18px 40px rgba(248, 113, 113, 0.55);
+    }
+
+    .nav-cta span.icon {
+      font-size: 16px;
+    }
+
+    .burger {
+      display: none;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .burger-line {
+      width: 16px;
+      height: 2px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      position: relative;
+    }
+
+    .burger-line::before,
+    .burger-line::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      border-radius: 999px;
+      background: #e5e7eb;
+    }
+
+    .burger-line::before {
+      top: -5px;
+    }
+
+    .burger-line::after {
+      top: 5px;
+    }
+
+    /* Mobile nav overlay */
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(circle at top, #1b0b15 0, #02010e 50%);
+      z-index: 40;
+      padding: 76px 20px 24px;
+    }
+
+    .nav-mobile.open {
+      display: block;
+    }
+
+    .nav-mobile-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+
+    .nav-mobile-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+
+    .nav-mobile-links a {
+      color: #e5e7eb;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    .nav-mobile-cta {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .nav-mobile-cta .secondary {
+      border-radius: 999px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.8);
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .nav-mobile-cta .secondary span.icon {
+      font-size: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+      }
+
+      .burger {
+        display: inline-flex;
+      }
+    }
+
+    /* Hero */
+    .hero-wrap {
+      padding-top: 40px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    @media (max-width: 1024px) {
+      .page {
+        padding: 20px 18px 48px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        text-align: center;
+      }
+
+      .hero-meta,
+      .hero-actions,
+      .hero-note {
+        justify-content: center;
+      }
+
+      .hero-meta {
+        display: flex;
+      }
+
+      .hero-phone-wrap {
+        margin-top: 24px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-wrap {
+        padding-top: 28px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+    }
+
+    .hero-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 4px 10px 4px 4px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .hero-eyebrow {
+      font-size: 13px;
+      color: var(--accent);
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 4vw, 40px);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .hero-title span {
+      background: linear-gradient(135deg, #f97373, #fbbf24, #fb7185);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 18px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 18px;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 52px;
+    }
+
+    .hero-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-meta span strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+/* ===== HERO BUTTON GRID (LIKE META BADGES) ===== */
+.hero-actions {
+  display: grid;
+  grid-template-columns: repeat(3, auto);   /* ✅ 3 sejajar desktop */
+  justify-content: center;
+  align-items: center;
+  gap: 10px 18px;
+  margin-bottom: 16px;
+}
+
+/* ✅ MOBILE: 2 SEJAJAR + 1 TURUN KE TENGAH */
+@media (max-width: 680px) {
+  .hero-actions {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  .hero-actions > :nth-child(3) {
+    grid-column: span 2;        /* turun ke baris baru */
+    justify-self: center;      /* tepat di tengah */
+  }
+}
+
+
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 12px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #020617;
+  box-shadow: 0 24px 50px rgba(239, 68, 68, 0.55);
+  transition: transform 0.17s ease, box-shadow 0.17s ease, filter 0.17s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.05);
+  box-shadow: 0 28px 60px rgba(239, 68, 68, 0.75);
+}
+
+.btn-primary span.icon {
+  font-size: 18px;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  padding: 11px 18px;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(15,23,42,0.88);
+  color: var(--muted);
+  cursor: pointer;
+  transition: border-color 0.16s ease, background 0.16s ease, color 0.16s ease;
+}
+
+.btn-ghost:hover {
+  border-color: rgba(248, 250, 252, 0.8);
+  color: #e5e7eb;
+  background: rgba(15,23,42,0.98);
+}
+
+.btn-ghost span.icon {
+  font-size: 16px;
+}
+
+.hero-note {
+  font-size: 11px;
+  color: var(--muted);
+margin-top: 35px;
+}
+
+.hero-note strong {
+  color: #e5e7eb;
+  font-weight: 600;
+}
+
+/* ===== WRAPPER UNTUK MEMUSATKAN BUTTON DNS ===== */
+.dns-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 16px 0 18px;
+}
+
+/* ===== BUTTON KHUSUS AppleJr DNS ===== */
+.btn-applejr-dns {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  padding: 8px 26px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  color: #eafcff;
+  background: linear-gradient(135deg, #00f2ff, #3b82f6, #6366f1);
+  border: 1px solid rgba(0,242,255,0.5);
+
+  cursor: pointer;
+  overflow: hidden;
+
+  box-shadow:
+    0 0 0 1px rgba(0,242,255,0.25),
+    0 10px 35px rgba(59,130,246,0.55);
+
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+}
+
+.btn-applejr-dns:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.12);
+  box-shadow:
+    0 0 0 1px rgba(0,242,255,0.65),
+    0 18px 60px rgba(59,130,246,0.85);
+}
+
+/* sweep effect */
+.btn-applejr-dns::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.45),
+    transparent
+  );
+  transform: translateX(-120%);
+  animation: applejrDnsSweep 3s infinite linear;
+}
+
+@keyframes applejrDnsSweep {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(120%); }
+}
+
+/* glow pulse */
+.btn-applejr-dns::after {
+  content: "";
+  position: absolute;
+  inset: -45%;
+  background: radial-gradient(circle at center,
+    rgba(0,242,255,0.45),
+    transparent 60%);
+  opacity: 0;
+  animation: applejrDnsPulse 2.4s infinite ease-in-out;
+}
+
+@keyframes applejrDnsPulse {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+/* icon glow */
+.btn-applejr-dns .icon {
+  font-size: 18px;
+  filter: drop-shadow(0 0 6px rgba(0,242,255,0.9));
+}
+
+ 
+
+
+
+    /* Hero phone mock */
+    .hero-phone-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-orbit {
+      position: absolute;
+      inset: 12%;
+      filter: blur(26px);
+      background:
+        radial-gradient(circle at 20% 0%, rgba(248, 113, 113, 0.7), transparent 55%),
+        radial-gradient(circle at 80% 100%, rgba(52, 211, 153, 0.6), transparent 55%),
+        radial-gradient(circle at 0 100%, rgba(56, 189, 248, 0.55), transparent 45%);
+      opacity: 0.7;
+      mix-blend-mode: screen;
+    }
+
+    .hero-phone {
+      position: relative;
+      z-index: 1;
+      width: 280px;
+      max-width: 100%;
+      aspect-ratio: 9 / 19;
+      border-radius: 42px;
+      padding: 8px;
+      background: radial-gradient(circle at 0 0, #f97316, #991b1b, #020617);
+      box-shadow: 0 40px 90px rgba(0,0,0,0.9);
+    }
+
+    .hero-phone-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 34px;
+      background: radial-gradient(circle at top, #020617, #020617 60%, #0b1120 100%);
+      padding: 12px 10px 14px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .hero-phone-notch {
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 14px;
+      border-radius: 999px;
+      background: #020617;
+    }
+
+    .hero-phone-card {
+      position: relative;
+      margin-top: 24px;
+      flex: 1;
+      border-radius: 24px;
+      overflow: hidden;
+    }
+
+    .hero-phone-bottom {
+      margin-top: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 9px;
+      color: #fee2e2;
+    }
+
+    .hero-phone-bottom strong {
+      font-size: 10px;
+    }
+
+    .hero-phone-bubble {
+      position: absolute;
+      right: 10px;
+      bottom: 10px;
+      font-size: 9px;
+      padding: 5px 7px;
+      border-radius: 999px;
+      background: rgba(248,250,252,0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(254,242,242,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #fef2f2;
+    }
+
+    .hero-phone-bubble span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    /* Sections */
+    .section {
+      margin-top: 72px;
+    }
+
+    .section-header {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 26px;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .section-subtitle {
+      font-size: 13px;
+      color: var(--muted);
+      max-width: 520px;
+    }
+
+    /* Features */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .feature-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .feature-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top left, rgba(248,250,252,0.04), transparent 50%),
+                  rgba(15,23,42,0.92);
+      padding: 16px 16px 15px;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.8);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .card-tag {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: rgba(15,23,42,0.9);
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+    }
+
+    .card-tag span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 24px;
+    }
+
+    @media (max-width: 900px) {
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    details.faq-item {
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: rgba(15,23,42,0.96);
+      padding: 10px 12px;
+    }
+
+    details.faq-item[open] {
+      background: rgba(15,23,42,1);
+      box-shadow: 0 18px 40px rgba(15,23,42,0.9);
+    }
+
+    summary.faq-summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    summary.faq-summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(148,163,184,0.6);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    details[open] .faq-icon {
+      border-color: rgba(248,250,252,0.9);
+      color: #e5e7eb;
+    }
+
+    .faq-body {
+      margin-top: 8px;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .faq-side {
+      border-radius: var(--radius-2xl);
+      border: 1px solid var(--border);
+      background: radial-gradient(circle at top, rgba(248,250,252,0.06), transparent 50%),
+                  rgba(15,23,42,0.98);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-soft);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .faq-side strong {
+      color: #e5e7eb;
+    }
+
+    .faq-side ul {
+      margin: 8px 0 0;
+      padding-left: 18px;
+    }
+
+    .faq-side li {
+      margin-bottom: 4px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 48px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(31,41,55,0.9);
+      font-size: 11px;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: #e5e7eb;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile navigation overlay -->
+  <div class="nav-mobile" id="nav-mobile">
+    <div class="nav-mobile-inner">
+      <div class="nav-mobile-links">
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="#top">Download</a>
+      </div>
+      <div class="nav-mobile-cta">
+        <button class="nav-cta" onclick="document.querySelector('#top').scrollIntoView({behavior:'smooth'})">
+          <span class="icon">⬇️</span>
+          <span>Download</span>
+        </button>
+        <button class="secondary" onclick="window.open('https://discord.com', '_blank')">
+          <span class="icon">?</span>
+          <span>Join Discord community</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky header -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#top" class="logo">
+        <div class="logo-mark">
+          <img src="../images?q=tbn:ANd9GcRjZKErPsdaEN8neg3izYhRgVt95rjQXy_mgQ&s" alt="Scarlet Logo" style="width:100%; height:100%; object-fit:cover; border-radius:999px;">
+        </div>
+        <div class="logo-text">
+          <span class="logo-text-main">Scarlet</span>
+          <span class="logo-text-sub">iOS app installer</span>
+        </div>
+      </a>
+      <nav class="nav">
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="#top">Download</a>
+        <button class="nav-cta" onclick="document.querySelector('#top').scrollIntoView({behavior:'smooth'})">
+          <span class="icon">⬇️</span>
+          <span>Download</span>
+        </button>
+      </nav>
+      <button class="burger" id="burger" aria-label="Open navigation">
+        <div class="burger-line"></div>
+      </button>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="page">
+      <!-- HERO -->
+      <section class="hero-wrap">
+        <div class="hero">
+          <div>
+            <div class="hero-eyebrow">Next-gen sideloading</div>
+            <h1 class="hero-title">
+              Meet <span>Scarlet</span>, the modern way to install apps on iPhone &amp; iPad.
+            </h1>
+            <p class="hero-subtitle">
+              Scarlet is an advanced iOS app installer that lets you sideload apps, tweaks and tools
+              with a beautiful interface, modern security and powerful revoke protection.
+            </p>
+            <div class="hero-meta">
+              <span><strong>iOS 14-26</strong> compatible</span>
+              <span><strong>No jailbreak</strong> required</span>
+              <span><strong>Direct</strong> install method</span>
+            </div>
+         <div class="dns-center">
+  <button class="btn-applejr-dns" onclick="window.open('https://applejr.net','_self')">
+    <span class="icon">🌐</span>
+    <span>AppleJr DNS</span>
+  </button>
+</div>
+
+
+            <div class="hero-actions">
+              <button class="btn-primary" onclick="window.open('itms-services://?action=download-manifest&url=https://applejr.net/post/Scarlet_Guangzhou.plist')">
+                <span class="icon">🚀</span>
+                <span>Install Scarlet</span>
+              </button>
+              <button class="btn-ghost" onclick="window.open('https://applejr.net','_blank')">
+                <span class="icon">📲</span>
+                <span>Install Via AppleJr</span>
+              </button>
+            </div>
+          <p>
+          </p>
+            <p class="hero-note">
+              <strong>Important:</strong> Please make sure you install and activate <strong>AppleJr DNS</strong> first
+  before installing Scarlet. After DNS is active, you can use
+  <strong>Direct Install Scarlet</strong> or install Scarlet <strong>via AppleJr</strong>.
+  If the installation fails or the app does not open, simply retry using the alternate method.
+            </p>
+          </div>
+
+          <!-- Phone preview -->
+          <div class="hero-phone-wrap" aria-hidden="true">
+            <div class="hero-orbit"></div>
+            <div class="hero-phone">
+              <div class="hero-phone-inner">
+                <div class="hero-phone-notch"></div>
+
+                <div class="hero-phone-card" style="
+                  background: url('https://i.imgur.com/xDxen8b.png') center center / cover no-repeat;
+                ">
+                  <div style="
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(to top, rgba(2,6,23,0.55), rgba(2,6,23,0.05));
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    padding: 14px 13px;
+                  ">
+                    <div class="hero-phone-bottom">
+                      <span>Scarlet Installing...</span>
+                      <span><strong>Scarlet UI</strong></span>
+                    </div>
+                    <div class="hero-phone-bubble">
+                      <span class="dot"></span>
+                      <span>Signed Certificate</span>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+     
+<!-- FEATURES -->
+<section class="section" id="features">
+  <div class="section-header">
+    <div class="section-eyebrow">Features</div>
+    <div class="section-title">Built for serious sideloading.</div>
+    <p class="section-subtitle">
+      Scarlet combines a clean UI with low-level signing controls, letting you manage IPA installs
+      like a pro while staying in full control of your device.
+    </p>
+  </div>
+
+  <div class="feature-grid">
+    <div class="card">
+      <div class="card-icon">📲</div>
+      <div class="card-title">On-device IPA installer</div>
+      <div class="card-desc">
+        Import IPA files from Files, Safari or your own repository, then install with a single tap.
+        Scarlet handles the signing and deployment workflow for you.
+      </div>
+      <div class="card-tag">
+        <span class="dot"></span>
+        <span>Drag &amp; drop IPA support</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🔐</div>
+      <div class="card-title">Certificate &amp; profile manager</div>
+      <div class="card-desc">
+        Add your own certificates, monitor their expiration and quickly switch between multiple
+        signing identities without leaving the app.
+      </div>
+      <div class="card-tag">
+        <span class="dot"></span>
+        <span>Personal &amp; enterprise certs</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🛡️</div>
+      <div class="card-title">Revoke-aware install flow</div>
+      <div class="card-desc">
+        Scarlet is designed to minimise downtime, automatically checking status before installs
+        and helping you recover from revocations faster.
+      </div>
+      <div class="card-tag">
+        <span class="dot"></span>
+        <span>Smarter revoke handling</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <div class="card-title">Real-time logs &amp; progress</div>
+      <div class="card-desc">
+        Watch each step of the signing pipeline in real time so you always know what's happening
+        behind the scenes when installing an app.
+      </div>
+      <div class="card-tag">
+        <span class="dot"></span>
+        <span>Great for debugging failed IPAs</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🧩</div>
+      <div class="card-title">Advanced entitlements</div>
+      <div class="card-desc">
+        Toggle entitlements like background modes, JIT (where supported) and other flags to get the
+        most from your apps, all from a simple interface.
+      </div>
+      <div class="card-tag">
+        <span class="dot"></span>
+        <span>Power-user friendly</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-icon">🎨</div>
+      <div class="card-title">Modern Scarlet UI</div>
+      <div class="card-desc">
+        A clean, OLED-friendly interface that feels at home on iOS. Dark mode first, gesture-driven,
+        and built for one-handed use.
+      </div>
+      <div class="card-tag">
+        <span class="dot"></span>
+        <span>Optimised for iPhone &amp; iPad</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-header">
+          <div class="section-eyebrow">FAQ</div>
+          <div class="section-title">Frequently asked questions.</div>
+          <p class="section-subtitle">
+            If you're new to sideloading, read these answers carefully before installing anything on your
+            everyday device.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-list">
+            <details class="faq-item" open="">
+              <summary class="faq-summary">
+                <span>Is Scarlet a jailbreak?</span>
+                <span class="faq-icon">?</span>
+              </summary>
+              <div class="faq-body">
+                No. Scarlet is <strong>not</strong> a jailbreak and does not exploit your device. It's a
+                signing and installation tool that uses standard iOS mechanisms to install apps, similar
+                to other sideloading solutions.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>Is using Scarlet safe?</span>
+                <span class="faq-icon">?</span>
+              </summary>
+              <div class="faq-body">
+                Any time you install apps from outside the App Store, you should understand the risks.
+                Only install IPA files from sources you trust and always keep backups of important data.
+                Scarlet itself does not collect your Apple ID or personal credentials.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>What iOS versions are supported?</span>
+                <span class="faq-icon">?</span>
+              </summary>
+              <div class="faq-body">
+                Scarlet is designed with <strong>modern iOS versions</strong> in mind, typically iOS 14
+                and later. Some methods or specific features may work on older builds, but support can
+                vary depending on Apple's latest changes.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>Why do apps get revoked?</span>
+                <span class="faq-icon">?</span>
+              </summary>
+              <div class="faq-body">
+                Apple can invalidate certificates used to sign apps that aren't distributed through
+                the App Store. When that happens, any apps signed with that certificate will stop opening.
+                Scarlet tries to reduce downtime, but revocations are controlled by Apple.
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-summary">
+                <span>Can Scarlet be removed easily?</span>
+                <span class="faq-icon">?</span>
+              </summary>
+              <div class="faq-body">
+                Yes. You can delete Scarlet just like any normal app. If you installed a configuration
+                profile, you can remove it from <strong>Settings &gt; General &gt; VPN &amp; Device Management</strong>.
+                Once removed, the certificate will no longer be trusted.
+              </div>
+            </details>
+          </div>
+
+          <aside class="faq-side">
+            <strong>Legal note &amp; disclaimer</strong>
+            <p>
+              Scarlet is a third-party tool designed for power users, developers and testers. It is your
+              responsibility to follow your local laws and Apple's terms of service. Only install content
+              you own or are licensed to use.
+            </p>
+            <ul>
+              <li>We do not encourage piracy or abusive behaviour.</li>
+              <li>Always back up your device before experimenting.</li>
+              <li>Use sideloading tools on a test device when possible.</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <span>&copy; <script>document.write(new Date().getFullYear())</script> Scarlet Installer. All product names are property of their respective owners.</span>
+        <div class="footer-links">
+          <a href="#top">Back to top</a>
+          <a href="#faq">FAQ</a>
+          <a href="mailto:contact@example.com">Contact</a>
+        </div>
+      </footer>
+    </div>
+  </main>
+
+  <script>
+    // Mobile nav toggle
+    (function () {
+      const burger = document.getElementById('burger');
+      const navMobile = document.getElementById('nav-mobile');
+
+      if (!burger || !navMobile) return;
+
+      const toggleNav = () => {
+        navMobile.classList.toggle('open');
+      };
+
+      burger.addEventListener('click', toggleNav);
+
+      // Close nav when clicking a link
+      navMobile.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' || e.target.closest('a')) {
+          navMobile.classList.remove('open');
+        }
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          navMobile.classList.remove('open');
+        }
+      });
+    })();
+  </script>
+   <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4972123,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="../index.htm" target="_blank"><img src="../0-1.gif?4972123&101" alt="" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</body>
+</html>

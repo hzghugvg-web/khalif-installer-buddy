@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>How to Fix Unable to Verify App on iPhone & iPad | AppleJr</title>
+  <meta name="description" content="Troubleshoot the Unable to Verify App error on iPhone and iPad when using ESign, KSign, or Scarlet. Check certificate status, trust settings, DNS, and reinstall options.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="canonical" href="unable-to-verify.html">
+  <meta name="robots" content="index,follow">
+  <meta name="author" content="AppleJr">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="AppleJr">
+  <meta property="og:title" content="How to Fix Unable to Verify App on iPhone & iPad">
+  <meta property="og:description" content="Troubleshoot Unable to Verify App errors with ESign, KSign, Scarlet, certificate status, trust settings, DNS, and reinstall options.">
+  <meta property="og:url" content="https://applejr.net/post/unable-to-verify.html">
+<!-- Schema HowTo JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Troubleshoot Unable to Verify App on iPhone and iPad",
+    "description": "Troubleshooting steps for Unable to Verify App errors with ESign, KSign, Scarlet and other sideloaded apps.",
+    "step": [
+      {
+        "@type": "HowToStep",
+        "name": "Check the Signing Certificate",
+        "text": "Confirm that the certificate currently used to install the app is still valid. If it has expired or been revoked, reinstall the app using a currently working certificate."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Check Developer Trust",
+        "text": "Open Settings, go to General and VPN & Device Management, and check whether the developer profile is available and trusted."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Remove and Reinstall the App",
+        "text": "Delete the affected app and reinstall it using a currently valid signing method or certificate."
+      },
+      {
+        "@type": "HowToStep",
+        "name": "Check AppleJr DNS if Your Installation Uses It",
+        "text": "If you use the AppleJr DNS method, confirm that the DNS profile is installed and active before reinstalling the app."
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <h1>How to Fix Unable to Verify App on iPhone & iPad</h1>
+
+  <p>The <b>Unable to Verify App</b> message usually means iOS cannot validate the certificate used to sign a sideloaded app such as ESign, KSign, or Scarlet.</p>
+
+  <p>For current installers, certificates, and iOS sideloading tools, visit the <a href="../index.htm">AppleJr iOS IPA Installer</a>. If you use Scarlet, you can also check the <a href="scarlet.html">Scarlet iOS installation page</a>.</p>
+
+  <h2>1. Check the Signing Certificate</h2>
+
+  <p>First, check whether the certificate used to install the app is still working. If the certificate has expired or been revoked, the same installation may stop opening or show an Unable to Verify App message.</p>
+
+  <p>In that situation, reinstalling the app with the same invalid certificate usually will not solve the problem. Use a currently valid certificate or signing method instead.</p>
+
+  <h2>2. Check Developer Trust Settings</h2>
+
+  <p>Open <b>Settings → General → VPN & Device Management</b>. If a developer profile for the installed app appears there, make sure it is trusted before opening the app again.</p>
+
+  <h2>3. Remove and Reinstall the App</h2>
+
+  <p>If the certificate is currently valid but the app still cannot be verified, remove the affected app and install it again. This can refresh the installed profile and signing information associated with the app.</p>
+
+  <h2>4. Check AppleJr DNS</h2>
+
+  <p>If your installation method uses <b>AppleJr DNS</b>, confirm that the DNS profile is installed and active before reinstalling ESign, KSign, or Scarlet.</p>
+
+  <p>DNS can be part of the installation method, but it cannot turn an already expired or revoked certificate into a valid certificate. If the signing certificate is no longer valid, use another currently working certificate.</p>
+
+  <h2>5. Should You Erase Your iPhone?</h2>
+
+  <p>Normally, <b>Erase All Content and Settings should not be your first solution</b>. A factory reset does not make an expired or revoked signing certificate valid again. Only consider resetting the device for broader iOS problems after backing up your data and after simpler troubleshooting has failed.</p>
+
+  <h2>Video Tutorial</h2>
+  <p>You can follow the full tutorial in my YouTube video below:</p>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/rBJsePLg4Kw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">
+  </iframe>
+
+  <p><i>This article is part of AppleJr Post.</i></p>
+</body>
+</html>

@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Unlock Esign/Scarlet/Ksign Link</title>
+
+<style>
+:root{
+  --bg:#050814;
+  --card:rgba(255,255,255,.07);
+  --stroke:rgba(255,255,255,.14);
+  --text:#f6faff;
+  --muted:rgba(246,250,255,.72);
+  --blue:#2d7cff;
+  --cyan:#00e5ff;
+  --purple:#7a5cff;
+  --danger1:#ff2d55;
+  --danger2:#ff4d6d;
+  --radius:22px;
+  --shadow:0 18px 70px rgba(0,0,0,.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  color:var(--text);
+
+  background:
+    radial-gradient(1200px 700px at 10% 15%, rgba(45,124,255,.45), transparent 60%),
+    radial-gradient(1000px 650px at 90% 20%, rgba(0,229,255,.40), transparent 60%),
+    radial-gradient(900px 600px at 50% 95%, rgba(122,92,255,.38), transparent 65%),
+    linear-gradient(180deg,#02030c,var(--bg));
+
+  min-height:100svh;
+  display:flex;
+  justify-content:center;
+
+  /* normal scroll page (no custom scroll container) */
+  padding:20px;
+  padding-top:calc(24px + env(safe-area-inset-top));
+  padding-bottom:calc(24px + env(safe-area-inset-bottom));
+}
+
+.container{
+  width:100%;
+  max-width:560px;
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  margin:auto; /* keeps it visually centered */
+}
+
+.card{
+  background:var(--card);
+  border:1px solid var(--stroke);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+  position:relative;
+  overflow:hidden;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(135deg,
+    rgba(45,124,255,.45),
+    rgba(0,229,255,.40),
+    rgba(122,92,255,.35)
+  );
+  filter:blur(24px);
+  opacity:.35;
+  pointer-events:none;
+}
+
+.inner{
+  position:relative;
+  padding:20px;
+  text-align:center;
+}
+
+/* BRAND */
+.brand{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+/* gradient title text */
+.gradient-title{
+  font-weight:1000;
+  font-size:20px;
+  letter-spacing:.4px;
+  line-height:1.2;
+
+  background: linear-gradient(135deg, #f97373, #fbbf24, #fb7185);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  /* subtle glow */
+  text-shadow:
+    0 0 18px rgba(251,113,133,.25),
+    0 0 28px rgba(251,191,36,.15);
+}
+
+
+.logo{
+  width:58px;
+  height:58px;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.18);
+  background:rgba(0,0,0,.3);
+}
+.logo img{width:100%;height:100%;object-fit:cover}
+
+.brand-title{
+  font-weight:1000;
+  font-size:18px;
+}
+
+/* badge + green dot */
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:6px 12px;
+  border-radius:999px;
+  font-size:12px;
+  font-weight:600;
+  color:rgba(246,250,255,.85);
+  background:rgba(0,0,0,.25);
+  border:1px solid rgba(255,255,255,.14);
+}
+.dot-green{
+  width:8px;height:8px;border-radius:50%;
+  background:#00ff6a;
+  box-shadow:0 0 6px rgba(0,255,106,.9), 0 0 12px rgba(0,255,106,.6);
+  flex-shrink:0;
+}
+@keyframes pulseGreen{
+  0%,100%{ box-shadow:0 0 6px rgba(0,255,106,.9), 0 0 12px rgba(0,255,106,.6); }
+  50%{ box-shadow:0 0 10px rgba(0,255,106,1), 0 0 20px rgba(0,255,106,.8); }
+}
+.dot-green{ animation:pulseGreen 2s ease-in-out infinite; }
+
+/* TEXT */
+h1{ font-size:21px; margin:12px 0 8px; }
+.subtitle{
+  font-size:14px;
+  color:var(--muted);
+  line-height:1.6;
+  margin:0 0 16px;
+}
+
+/* BUTTONS */
+.btn{
+  width:100%;
+  border:0;
+  border-radius:16px;
+  padding:15px;
+  font-size:16px;
+  font-weight:900;
+  cursor:pointer;
+  transition:transform .08s ease, opacity .2s ease, filter .2s ease;
+  -webkit-tap-highlight-color: transparent;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+}
+.btn:active{ transform:scale(.98); }
+
+/* Subscribe */
+.btn-sub{
+  background:linear-gradient(135deg,var(--danger1),var(--danger2));
+  color:#fff;
+}
+
+/* Subscribe processing */
+.btn-sub-loading{
+  background:rgba(0,0,0,.45);
+  color:rgba(246,250,255,.92);
+  border:1px solid rgba(255,255,255,.16);
+  cursor:default;
+}
+
+/* Subscribe verified */
+.btn-verified{
+  background:rgba(0,0,0,.45);
+  color:rgba(246,250,255,.92);
+  border:1px solid rgba(255,255,255,.16);
+  cursor:default;
+  filter:saturate(.85);
+}
+
+/* logo group (2 logos) */
+.logo-group{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+/* optional divider effect between logos */
+.logo-group::after{
+  content:"";
+  position:absolute;
+  width:0;
+  height:0;
+}
+
+
+/* Get link locked */
+.btn-lock{
+  background:rgba(0,0,0,.58);
+  color:rgba(246,250,255,.75);
+  border:1px solid rgba(255,255,255,.14);
+  cursor:not-allowed;
+}
+
+/* Get link active */
+.btn-go{
+  background:linear-gradient(135deg,var(--blue),var(--cyan));
+  color:#001018;
+  cursor:pointer;
+}
+
+/* SHAKE (only subscribe initial) */
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  20%{transform:translateX(-2px)}
+  40%{transform:translateX(2px)}
+  60%{transform:translateX(-2px)}
+  80%{transform:translateX(2px)}
+}
+.btn-shake{ animation:shake 1.2s ease-in-out infinite; }
+
+/* Spinner */
+.spinner{
+  width:16px;
+  height:16px;
+  border-radius:50%;
+  border:2px solid rgba(255,255,255,.35);
+  border-top-color:#fff;
+  animation:spin .75s linear infinite;
+}
+@keyframes spin{ to{ transform:rotate(360deg); } }
+
+/* Verified icon */
+.verified-dot{
+  width:18px;height:18px;border-radius:999px;
+  background:rgba(0,255,106,.12);
+  border:1px solid rgba(0,255,106,.35);
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 18px rgba(0,255,106,.18);
+}
+.verified-dot svg{display:block}
+
+/* Loading bar (indeterminate) */
+.loader{
+  margin-top:10px;
+  height:10px;
+  width:100%;
+  border-radius:999px;
+  background:rgba(255,255,255,.10);
+  border:1px solid rgba(255,255,255,.12);
+  overflow:hidden;
+  display:none;
+}
+.loader .bar{
+  height:100%;
+  width:40%;
+  border-radius:999px;
+  background:linear-gradient(90deg,
+    rgba(0,229,255,.0),
+    rgba(0,229,255,.9),
+    rgba(45,124,255,.9),
+    rgba(0,229,255,.0)
+  );
+  filter:drop-shadow(0 0 10px rgba(0,229,255,.55));
+  animation:indeterminate 1.15s ease-in-out infinite;
+}
+@keyframes indeterminate{
+  0%{ transform:translateX(-120%); }
+  100%{ transform:translateX(260%); }
+}
+
+.divider{
+  height:1px;
+  background:rgba(255,255,255,.12);
+  margin:16px 0 12px;
+}
+.fine{ font-size:12px; color:rgba(246,250,255,.6); line-height:1.5; }
+
+/* INFO */
+.section-title{
+  font-weight:900;
+  font-size:15px;
+  margin-bottom:10px;
+  text-align:left;
+}
+.step{
+  display:flex;
+  gap:10px;
+  text-align:left;
+  margin-bottom:10px;
+}
+.dot{
+  width:9px;height:9px;
+  margin-top:6px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--cyan),var(--purple));
+  box-shadow:0 0 16px rgba(0,229,255,.5);
+}
+.step b{font-size:14px}
+.step span{font-size:13px;color:var(--muted)}
+
+/* YouTube icon */
+.yt-icon{
+  width:18px;
+  height:18px;
+  display:inline-flex;
+}
+.yt-icon svg{display:block}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+  <!-- MAIN -->
+  <div class="card">
+    <div class="inner">
+
+      <div class="brand">
+       <div class="logo-group">
+  <div class="logo">
+    <img src="https://i.imgur.com/ptoEbcym.png" alt="Esign Logo">
+  </div>
+  <div class="logo">
+    <img src="https://i.imgur.com/347Q9VHm.png" alt="Partner Logo">
+  </div>
+       <div class="logo">
+    <img src="https://i.imgur.com/KuehszZm.png" alt="Partner Logo">
+  </div>
+</div>
+
+
+      <div class="badge"><span class="dot-green"></span>Signed Certificate</div>
+      </div>
+
+      <h1>Subscribe to Unlock</h1>
+<p>
+Esign/Scarlet/Ksign Direct Install with newest certificate from AppleJr.
+    </p>
+
+      <!-- Button 1: Subscribe Task -->
+      <button class="btn btn-sub btn-shake" id="btnSub">
+        <span class="yt-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path fill="#fff" d="M23.5 6.2s-.23-1.65-.93-2.38c-.89-.95-1.89-.95-2.35-1C16.92 2.5 12 2.5 12 2.5h-.01s-4.92 0-8.21.32c-.46.05-1.46.05-2.35 1C.73 4.55.5 6.2.5 6.2S.2 8.14.2 10.07v1.86c0 1.93.3 3.87.3 3.87s.23 1.65.93 2.38c.89.95 2.06.92 2.58 1.02C6.11 19.52 12 19.5 12 19.5s4.92-.01 8.21-.33c.46-.05 1.46-.05 2.35-1 .7-.73.93-2.38.93-2.38s.3-1.94.3-3.87v-1.86c0-1.93-.3-3.87-.3-3.87z"/>
+            <path fill="#050814" d="M9.75 14.43V7.86l6.02 3.29-6.02 3.28z"/>
+          </svg>
+        </span>
+        <span>Subscribe (Task 1/1)</span>
+      </button>
+
+      <!-- Button 2: Get Link -->
+      <button class="btn btn-lock" id="btnGet" disabled style="margin-top:10px;">🔒 Get Link</button>
+
+      <!-- loading bar (only for Get Link unlock flow) -->
+      <div class="loader" id="loader">
+        <div class="bar"></div>
+      </div>
+
+      <div class="divider"></div>
+      <p class="fine">Note: Subscribe to the AppleJr channel to unlock the download.
+        Your support helps us keep improving the website.</p>
+<center>
+
+    </center>
+    </div>
+  </div>
+
+  <!-- HOW -->
+  <div class="card">
+    <div class="inner">
+      <div class="section-title">How it works</div>
+      <div class="step"><div class="dot"></div><div><b>Tap Subscribe Button</b><span> Open YouTube in new tab.</span></div></div>
+          <div class="step"><div class="dot"></div><div><b>Subscribe</b><span> Subscribe AppleJr Channel.</span></div></div>
+      <div class="step"><div class="dot"></div><div><b>Checking</b><span> Checking the Subscription.</span></div></div>
+      <div class="step"><div class="dot"></div><div><b>Get Link</b><span> Download unlocked.</span></div></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const qs = new URLSearchParams(location.search);
+const token = qs.get("t");
+
+const btnSub = document.getElementById("btnSub");
+const btnGet = document.getElementById("btnGet");
+const loader = document.getElementById("loader");
+
+const EXPIRE    = 24 * 60 * 60 * 1000; // 24 hours
+const SUB_DELAY = 8000;                // checking subscription (ms)
+const WAIT_MS   = 6000;                // unlock get link (ms)
+
+function b64urlDecode(b64url){
+  const b64 = b64url.replace(/-/g,'+').replace(/_/g,'/');
+  const pad = b64.length % 4 ? '='.repeat(4 - (b64.length % 4)) : '';
+  const str = atob(b64 + pad);
+  return decodeURIComponent(escape(str));
+}
+
+function setSubLoading(){
+  btnSub.className = "btn btn-sub-loading";
+  btnSub.disabled = true;
+  btnSub.innerHTML = `<span class="spinner"></span><span>Checking subscription…</span>`;
+}
+
+function setSubVerified(){
+  btnSub.className = "btn btn-verified";
+  btnSub.disabled = true;
+  btnSub.innerHTML = `
+    <span class="verified-dot" aria-hidden="true">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+        <path d="M20 7L10 17l-5-5" stroke="#00ff6a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <span>Subscribed</span>
+  `;
+}
+
+function lockGet(label){
+  btnGet.className = "btn btn-lock";
+  btnGet.disabled = true;
+  btnGet.textContent = label;
+}
+
+function showLoading(){ loader.style.display = "block"; }
+function hideLoading(){ loader.style.display = "none"; }
+
+function enableGet(dest){
+  hideLoading();
+  btnGet.className = "btn btn-go";
+  btnGet.disabled = false;
+  btnGet.textContent = "🔓 Get Link";
+  btnGet.onclick = () => location.href = dest;
+}
+
+function startUnlockFlow(dest){
+  lockGet("⏳ Unlocking…");
+  showLoading();
+  setTimeout(() => enableGet(dest), WAIT_MS);
+}
+
+try{
+  if(!token) throw new Error("Missing token");
+
+  const p = JSON.parse(b64urlDecode(token));
+  if(!p.y || !p.d) throw new Error("Invalid payload");
+
+  const key = "applejr_" + token;
+  const saved = JSON.parse(localStorage.getItem(key) || "null");
+  const now = Date.now();
+
+  // Already valid -> verified + get link active
+  if(saved && (now - saved.t) < EXPIRE){
+    setSubVerified();
+    enableGet(p.d);
+  } else {
+    lockGet("🔒 Get Link (locked)");
+
+    btnSub.onclick = () => {
+      setSubLoading();
+      window.open(p.y, "_blank", "noopener,noreferrer");
+      localStorage.setItem(key, JSON.stringify({ t: Date.now() }));
+
+      setTimeout(() => {
+        setSubVerified();
+        startUnlockFlow(p.d);
+      }, SUB_DELAY);
+    };
+  }
+
+} catch(e){
+  btnSub.disabled = true;
+  btnSub.className = "btn btn-sub-loading";
+  btnSub.textContent = "Invalid link";
+  lockGet("Invalid link");
+  hideLoading();
+}
+</script>
+
+</body>
+</html>
