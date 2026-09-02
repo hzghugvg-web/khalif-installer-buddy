@@ -16,12 +16,14 @@ export type Database = {
     Tables: {
       library_apps: {
         Row: {
+          bundle_id: string
           category: string
           created_at: string
           description: string
           icon_url: string
           id: string
           install_url: string
+          ipa_path: string
           is_published: boolean
           name: string
           sort_order: number
@@ -29,12 +31,14 @@ export type Database = {
           version: string
         }
         Insert: {
+          bundle_id?: string
           category?: string
           created_at?: string
           description?: string
           icon_url?: string
           id?: string
-          install_url: string
+          install_url?: string
+          ipa_path?: string
           is_published?: boolean
           name: string
           sort_order?: number
@@ -42,12 +46,14 @@ export type Database = {
           version?: string
         }
         Update: {
+          bundle_id?: string
           category?: string
           created_at?: string
           description?: string
           icon_url?: string
           id?: string
           install_url?: string
+          ipa_path?: string
           is_published?: boolean
           name?: string
           sort_order?: number
