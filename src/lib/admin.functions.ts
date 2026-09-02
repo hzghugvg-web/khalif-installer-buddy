@@ -33,11 +33,30 @@ const appSchema = z.object({
   description: z.string().trim().max(500).default(""),
   category: z.string().trim().max(40).default("Приложения"),
   version: z.string().trim().max(30).default(""),
-  icon_url: z.string().url(),
-  install_url: z.string().url(),
+  bundle_id: z.string().trim().max(120).default(""),
+  icon_url: z.string().trim().min(1).max(500),
+  ipa_path: z.string().trim().max(300).default(""),
+  install_url: z.string().trim().max(500).default(""),
   is_published: z.boolean().default(true),
   sort_order: z.number().int().min(0).max(100000).default(0),
 });
+
+export const createUploadUrl = createServerFn({ method: "POST" })
+  .inputValidator((input) =>
+    z.object({ kind: z.enum(["icon", "ipa"]), filename: z.string().min(1).max(200) }).parse(input),
+  )
+  .handler(async ({ data }) => {
+    await requireAdmin();
+    const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+    const safe = data.filename.replace(/[^a-zA-Z0-9._-]/g, "_").slice(-80);
+    const path = `${data.kind}/${crypto.randomUUID()}-${safe}`;
+    const { data: signed, error } = await supabaseAdmin.storage
+      .from("library")
+      .createSignedUploadUrl(path);
+    if (error || !signed) throw error ?? new Error("Не удалось создать ссылку загрузки");
+    return { path, signedUrl: signed.signedUrl, token: signed.token };
+  });
+
 
 export const getAdminState = createServerFn({ method: "GET" }).handler(async () => {
   const session = await useSession<AdminSession>(sessionConfig());
